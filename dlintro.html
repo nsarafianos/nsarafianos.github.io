@@ -186,8 +186,7 @@ Dropout is a powerful regularization technique introduced by Srivastava et al. <
 
 For example, if dropout is applied with a probability of 50% after a fully-connected layer with 1024 units, then in each epoch 512 units of the layer are randomly dropped at training time. Thus, the neurons in the respective layers try to learn representations without relying too much on other neurons on the same layer (co-adaptation) and try to learn more robust representations. At test time, all the neurons are going to be active which means that (if the probability of dropout was N%) 100/N as many neurons will be active compared to the training stage. To alleviate this, weights that come out of the respective layer are divided by 100/N. </br></br>
 
-To understand dropout better, I would suggest reading the <a href="http://www.jmlr.org/papers/volume15/srivastava14a.old/source/srivastava14a.pdf">original paper</a> along with the aforementioned  <a href="http://neuralnetworksanddeeplearning.com/chap3.html#other_techniques_for_regularization">electronic book chaptrer</a> of Michael Nielsen. Additionally, in the Stanford ConvNet class, the <a href="http://cs231n.github.io/neural-networks-2/#reg">inverted dropout</a> technique is discussed, which performs the scaling described above, during training, leaving the forward pass at test time untouched.
-
+To understand dropout better, I would suggest reading the <a href="http://www.jmlr.org/papers/volume15/srivastava14a.old/source/srivastava14a.pdf">original paper</a> along with the aforementioned  <a href="http://neuralnetworksanddeeplearning.com/chap3.html#other_techniques_for_regularization">electronic book chaptrer</a> of Michael Nielsen. Additionally, in the Stanford ConvNet class, the <a href="http://cs231n.github.io/neural-networks-2/#reg">inverted dropout</a> technique is discussed, which performs the scaling described above, during training, leaving the forward pass at test time untouched. Goodfellow et al. <a href="#references">[8]</a> proposed maxout, a natural companion to dropout. The maxout model is simply a feed-forward achitecture, such as a multilayer perceptron or deep convolutional neural network, that uses a new type of activation function: the maxout unit. It facilitates the optimization by dropout and improves the accuracy of dropout’s fast approximate model averaging technique.
 
 
 <a name="definingconvnets"></a>
@@ -238,6 +237,7 @@ The way I see it, Deep Learning using ConvNets is just another Machine Learning 
     [5] K. Simonyan, A. Zisserman, "Very Deep Convolutional Networks for Large-Scale Image Recognition."  arXiv preprint arXiv:1409.1556 (2014).</br>
     [6]  S. S. Kruthiventi, K. Ayush, R. V. Babu, Deepfix: A fully convolutional neural network for predicting human eye fixations. arXiv preprint arXiv:1510.02927, 2015 </br>
     [7] N. Srivastava, G. E. Hinton, A. Krizhevsky, I. Sutskever, R. Salakhutdinov,  "Dropout: a simple way to prevent neural networks from overfitting" Journal of Machine Learning Research, 15(1), 2014 1929-1958.</br>
+    [8] I. J. Goodfellow, D. Warde-Farley, M. Mirza, A. C. Courville, Y. Bengio, "Maxout networks". ICML (3), 28, 2013,, 1319-1327.
 
 </div>
 </div>
