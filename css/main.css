@@ -77,6 +77,17 @@ a:visited { color: #205caa; }
   letter-spacing: -.5px;
 }
 
+figure .image {
+    width: 100%;
+}
+
+figure {
+    text-align: center;
+    display: table;
+    max-width: 30%; /* demo; set some amount (px or %) if you can */
+    margin: 10px auto; /* not needed unless you want centered */
+}
+
 /* Site footer */
 
 .site-footer {
