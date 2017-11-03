@@ -162,8 +162,15 @@ figure {
 
 .home h1 { margin-bottom: 25px; }
 
+.posts {
+  width: 900px;
+  padding: 0em 2em 0em 1em;
+  font-size: 16px;
+  display: block;
+  color: #4d4b59;
+}
 .posts .post-link {
-  	width: 1000px;
+  	width: 920px;
 	min-height: 200px;
 	margin: 0 auto; /* top and bottom, right and left */
 	/*border: 1px solid #000;*/
@@ -173,7 +180,7 @@ figure {
 }
 
 .posts .post-date {
-  width: 1000px;
+  width: 920px;
   font-size: 16px;
   display: block;
   color: #4d4b59;
@@ -181,37 +188,45 @@ figure {
 
 
 .container {
-	width: 1000px;
-	min-height: 200px;
+	width: 950px;
+	min-height: 150px;
 	margin: 0 auto; /* top and bottom, right and left */
 	border: 1px hidden #000;
 	/* border: none; */
 	text-align: center;
-	padding: 1em 1em 1em 1em; /* top, right, bottom, left */
 	color: #4d4b59;
 	background: #FFFFFF;
 }
 
 .news {
-	width: 1000px;
+	width: 920px;
 	min-height: 20px;
 	margin: 0 auto; /* top and bottom, right and left */
 	/*border: 1px solid #000;*/
 	border: none;
 	text-align: left;
-	padding: 1em 1em 1em 1em; /* top, right, bottom, left */
 	color: #4d4b59;
 	background: #FFFFFF;
 }
 
 .publication {
-	width: 1000px;
+	width: 950px;
 	min-height: 20px;
 	margin: 0 auto; /* top and bottom, right and left */
 	/*border: 1px solid #000;*/
 	border: none;
 	text-align: left;
-	padding: 1em 1em 1em 1em; /* top, right, bottom, left */
+	color: #4d4b59;
+	background: #FFFFFF;
+}
+
+.publogo {
+	min-height: 20px;
+	margin: 5 auto; /* top and bottom, right and left */
+	/*border: 1px solid #000;*/
+	border: none;
+	text-align: left;
+	padding: 1em 1em 0em 1em;
 	color: #4d4b59;
 	background: #FFFFFF;
 }
