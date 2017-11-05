@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nikolaos Sarafianos</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="https://nsarafianos.github.io/">
+      
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+
+<div class="page-content">
+<div class="wrap">
+<div class="post">
+<header class="post-header">
+    <h1>ICCV: </h1>
+    <p class="meta">Nikolaos Sarafianos, November 4, 2017</p>
+</header>
+After spending 8 days in the beautiful city of Venice attending ICCV and presenting our work on curriculum learning for multi-task classification, it's time for a writeup on papers I liked, presentations I found interesting and some trends for the near future. </br></br>
+
+A TL;DR version of this post would be: 
+    
+<font size="4">Contents
+<ul>
+    <li><a href="#gantutorial">Tutorials on GANs and Workshop on Instance Level Recognition</a></li>
+    <li><a href="#opensettutorial">The Open Set Recognition Problem Tutorial by Anderson Rocha</a></li>
+    <li><a href="#dlpapers">Deep Learning Papers</a></li>
+    <li><a href="#conc">Conclusions and Open Questions</a></li>
+</ul>
+</font>     
+    
+
+<a name="gantutorial"></a>
+<h3>GANs and Instance Level Recognition</h3>
+    Among the tons of options for workshops and tutorials that were available I decided to go mainstream and attend the <a href="https://sites.google.com/view/iccv-2017-gans/schedule">tutorial on GANs</a> from Ian Goodfellow and the workshop on instance level recognition organized by Georgia Gkioxari. Both websites have the slides of the talks available which is wonderful. I liked a lot the talk from Mihaela Rosca on autoencoder GANs which is based on <a href="https://arxiv.org/pdf/1706.04987.pdf">this</a> paper for its simplicity and the way it's presented. StackGANs have a <a href="https://github.com/hanzhanggit/StackGAN-v2">follow-up</a> work with even more realistic results which improves the previous idea but works on multiple scales with a conditional and an uncoditional loss at each one of them. The horse2zebra demo from the CycleGAN authors consisted of a horse mask that you get to wear which was <a href="https://twitter.com/junyanz89/status/922869408778870787">hilarious</a> and very animal-friendly. </br>
+    
+    From the workshop on instance recognition I loved how Kaiming He deviated from his Mask-RCNN work and he explained his perspective on invariance versus equivariance and how this concept fitted his work by ditching ROIpool and doing ROIaling on the generated region proposals. I also attended parts of the <a href="http://beyond-supervised.ai/">beyond supervised learning</a> workshop which covered a lot of unsupervised and reinforcement learning approaches with computer vision applications. The presenters focused on generative, self-supervised, a lot of RL, and imitation learning techniques and argued that just throwing data into smartly designed architectures ignores significant amounts of information that's available. Here's what we found the most interesting: 
+    <ul>
+    <li>Attend Infer Repeat (Paper and Code): proposes an elegant way of performing inference in structured images (2 digits in an image) using generative modeling which adapts to the input given.</li>
+    <li>Co-Segmentation by Composition: Smart way of performing segmentation in an unsupervised way by leveraging occurrence of similar image patterns in images. For example, they can segment all the bikes in an image by inferring that these 2 detected things (they do not have a label) look very similar and thus they must have a similar structure.</li>
+    <li>Alexei Efros talked about their recent ICML work on self-supervised learning in which they learn to play Mario without introducing any rewards as in RL but just by making him curious about the world. He seems to be a super cool person and his talks are very nice; I found a recent one of his here. </li>
+</ul> </br>
+    
+    
+    
+    
+</div>
+</div>
+</div>
+<footer class="site-footer">
+</footer>
+</body>
+</html>
