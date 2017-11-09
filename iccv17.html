@@ -18,37 +18,61 @@
 <div class="wrap">
 <div class="post">
 <header class="post-header">
-    <h1>ICCV: </h1>
-    <p class="meta">Nikolaos Sarafianos, November 4, 2017</p>
+    <h1>ICCV 2017: Cool Computer Vision Ideas Everywhere </h1>
+    <p class="meta">Nikolaos Sarafianos, November 9, 2017</p>
 </header>
-After spending 8 days in the beautiful city of Venice attending ICCV and presenting our work on curriculum learning for multi-task classification, it's time for a writeup on papers I liked, presentations I found interesting and some trends for the near future. </br></br>
+After spending 8 days in the beautiful city of Venice, attending ICCV and presenting our work on curriculum learning for multi-task classification, it's time for a writeup on papers I liked, presentations I found interesting and some trends for the near future. You can find the opening slides which contain nice stats <a href="http://iccv2017.thecvf.com/files/OpeningICCV17.pdf">here</a>. </br></br>
 
-A TL;DR version of this post would be: 
-    
 <font size="4">Contents
 <ul>
     <li><a href="#gantutorial">Tutorials on GANs and Workshop on Instance Level Recognition</a></li>
-    <li><a href="#opensettutorial">The Open Set Recognition Problem Tutorial by Anderson Rocha</a></li>
-    <li><a href="#dlpapers">Deep Learning Papers</a></li>
-    <li><a href="#conc">Conclusions and Open Questions</a></li>
+    <li><a href="#trendytopics">Cool papers that attracted my attention</a></li>
+    <li><a href="#conc">Conclusions</a></li>
 </ul>
 </font>     
     
 
 <a name="gantutorial"></a>
 <h3>GANs and Instance Level Recognition</h3>
-    Among the tons of options for workshops and tutorials that were available I decided to go mainstream and attend the <a href="https://sites.google.com/view/iccv-2017-gans/schedule">tutorial on GANs</a> from Ian Goodfellow and the workshop on instance level recognition organized by Georgia Gkioxari. Both websites have the slides of the talks available which is wonderful. I liked a lot the talk from Mihaela Rosca on autoencoder GANs which is based on <a href="https://arxiv.org/pdf/1706.04987.pdf">this</a> paper for its simplicity and the way it's presented. StackGANs have a <a href="https://github.com/hanzhanggit/StackGAN-v2">follow-up</a> work with even more realistic results which improves the previous idea but works on multiple scales with a conditional and an uncoditional loss at each one of them. The horse2zebra demo from the CycleGAN authors consisted of a horse mask that you get to wear which was <a href="https://twitter.com/junyanz89/status/922869408778870787">hilarious</a> and very animal-friendly. </br>
+    Among the tons of options for workshops and tutorials that were available I decided to go mainstream and attend the <a href="https://sites.google.com/view/iccv-2017-gans/schedule">tutorial on GANs</a> from Ian Goodfellow and the workshop on <a href="https://instancetutorial.github.io/">instance level recognition</a> organized by Georgia Gkioxari. Both websites have the slides of the talks available which is wonderful. I liked a lot the talk from Mihaela Rosca on autoencoder GANs which is based on <a href="https://arxiv.org/pdf/1706.04987.pdf">this</a> paper for its simplicity and the way it's presented. StackGANs have a <a href="https://github.com/hanzhanggit/StackGAN-v2">follow-up</a> work with even more realistic results which improves the previous idea but works on multiple scales with a conditional and an unconditional loss at each one of them. The horse2zebra demo from the CycleGAN authors consisted of a horse mask that you get to wear which was <a href="https://twitter.com/junyanz89/status/922869408778870787">hilarious</a>.</br>
     
-    From the workshop on instance recognition I loved how Kaiming He deviated from his Mask-RCNN work and he explained his perspective on invariance versus equivariance and how this concept fitted his work by ditching ROIpool and doing ROIaling on the generated region proposals. I also attended parts of the <a href="http://beyond-supervised.ai/">beyond supervised learning</a> workshop which covered a lot of unsupervised and reinforcement learning approaches with computer vision applications. The presenters focused on generative, self-supervised, a lot of RL, and imitation learning techniques and argued that just throwing data into smartly designed architectures ignores significant amounts of information that's available. Here's what we found the most interesting: 
+    From the workshop on instance recognition, I loved how Kaiming He deviated from his Mask-RCNN work and he explained his perspective on invariance versus equivariance and how this concept fitted his work by ditching ROIpool and doing ROIalign on the generated region proposals. Since we're here check the paper on <a href="https://arxiv.org/pdf/1703.06211.pdf">Deformable Convolutional Networks</a> from MSR Asia which discusses deformable RoI pooling. I also attended parts of the <a href="http://beyond-supervised.ai/">beyond supervised learning</a> workshop which covered a lot of unsupervised and reinforcement learning approaches with computer vision applications. The presenters focused on generative, self-supervised, a lot of RL, and imitation learning techniques and argued that just throwing data into smartly designed architectures ignores significant amounts of information that's available. Here's what I found the most interesting: 
     <ul>
-    <li>Attend Infer Repeat (Paper and Code): proposes an elegant way of performing inference in structured images (2 digits in an image) using generative modeling which adapts to the input given.</li>
-    <li>Co-Segmentation by Composition: Smart way of performing segmentation in an unsupervised way by leveraging occurrence of similar image patterns in images. For example, they can segment all the bikes in an image by inferring that these 2 detected things (they do not have a label) look very similar and thus they must have a similar structure.</li>
-    <li>Alexei Efros talked about their recent ICML work on self-supervised learning in which they learn to play Mario without introducing any rewards as in RL but just by making him curious about the world. He seems to be a super cool person and his talks are very nice; I found a recent one of his here. </li>
+    <li><a href="https://github.com/aakhundov/tf-attend-infer-repeat">Attend Infer Repeat</a>: proposes an elegant way of performing inference in structured images (2 digits in an image) using generative modeling which adapts to the input given.</li>
+    <li><a href="https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Faktor_Co-segmentation_by_Composition_2013_ICCV_paper.pdf">Co-Segmentation by Composition</a>: Smart way of performing segmentation in an unsupervised way by leveraging occurrence of similar image patterns in images. For example, they can segment all the bikes in an image by inferring that these 2 detected things (they do not have a label) look very similar and thus they must have a similar structure.</li>
+    <li>Alexei Efros talked about <a href="https://pathak22.github.io/noreward-rl/">their recent ICML work</a> on self-supervised learning in which they learn to play Mario without introducing any rewards as in RL but just by making him curious about the world. He seems to be a super cool person and his talks are very nice; find one on YouTube.  </li>
 </ul> </br>
     
-    
-    
-    
+<a name="trendytopics"></a>
+<h3>Cool Papers</h3>
+The great thing in conferences with 700+ papers and no parallel sessions (at least in the main conference) is that whatever your research interests are you will always find posters with a cute and simple idea to learn more about. Without counting keywords in titles I have a feeling that action recognition, human re-identification, pose estimation and face recognition should be among the most popular applications. I noticed a lot of papers with pyramid-like networks that extracted information at multiple scales, a lot of autoencoder-like applications and obviously a plethora of GANs. Video is still not huge although there were a decent amount of papers working on video understanding. I was glad to see that some papers followed simple straight-forward approaches to solve problems. The best example I can recall is this one: <a href="https://arxiv.org/pdf/1705.03098.pdf">A simple yet effective baseline for 3d human pose estimation</a>.</br>
+
+<b>Learning Embeddings</b> 
+<ul>
+    <li>A smart and easy-to-follow paper named <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Opitz_BIER_-_Boosting_ICCV_2017_paper.pdf">BIER - Boosting Independent Embeddings Robustly</a>. Instead of using a single embedding they divide it to sub groups (aka weak learners) and perform gradient boosting. Their Figure 3 along with their ablation studies on different groups and losses are very informative. </li>
+    <li> <a href="https://research.fb.com/publications/dense-and-low-rank-gaussian-crfs-using-deep-embeddings/">Dense and Low-Rank Gaussian CRFs using Deep Embeddings</a></li>
+    <li> <a href="https://arxiv.org/pdf/1706.07567.pdf">Sampling Matters in Deep Embedding Learning</a></li>
+</ul> </br>
+
+<b>Domain Adaptation</b>
+<ul>
+    <li> Both Kate Saenko and Trevor Darrell discussed recent works on domain adaptation including two adversarial-based ones. One is <a href="https://arxiv.org/pdf/1702.05464.pdf">ADDA</a> in which a discriminator with an adversarial loss is introduced between the two domains during training. They have a nice follow-up work (I guess for the upcoming CVPR) named CyCADA which enforces semantic consistency in the generator by an additional source cycle loss. They generate the source back from the target following the CycleGAN paper and compare the initial and the generated images. </li>
+    <li> Another piece of interesting work is the paper on <a href="https://arxiv.org/pdf/1708.00938.pdf">Asssociative Domain Adaptation</a> which leverages unlabeled data and tries to send a "walker" from the source labeled domain to the target and back to the source (again a cycle-related idea) and checks if it goes back to the same number of the MNIST dataset. </li>
+    <li> <a href="https://arxiv.org/pdf/1709.02476.pdf">Fine-grained Recognition in the Wild: A Multi-Task Domain Adaptation Approach</a> </li>
+</ul> </br>
+
+<b>Methods on Learning</b></br>
+I find very interesting papers that aspire to deviate from the classical supervised learning paradigm and look into ways to combat problems such as imbalanced data, noisy labels, or adding tasks to existing networks. Alex Kendall's talk on geometry and uncertainty in Computer Vision also touched this subject since he discussed his <a href="https://arxiv.org/pdf/1703.04977.pdf">recent paper</a>  on how to assign weights to tasks based on the homoscedastic uncertainty of the individual tasks. Some papers I enjoyed talking to their authors are the following. 
+<ul>
+    <li> <a href="https://arxiv.org/pdf/1708.06977.pdf">Incremental Learning of Object Detectors without Catastrophic Forgetting</a> </li>
+    <li> <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Doersch_Multi-Task_Self-Supervised_Visual_ICCV_2017_paper.pdf">Multi-task Self-Supervised Visual Learning</a> </li>
+    <li> <a href="https://arxiv.org/pdf/1703.02391.pdf">Learning from Noisy Labels with Distillation</a> </li>
+    <li> <a href="http://www.eecs.qmul.ac.uk/~sgg/papers/DongEtAl_ICCV2017.pdf">Class Rectification Hard Mining for Imbalanced Deep Learning</a> </li>
+</ul> </br>
+
+<a name="conc"></a>
+<h3>Conclusion</h3> 
+Ablation studies and failure cases were present in most of the papers as just state-of-the-art results are not important per se if there's no explanation behind the components of the method that achieved them. I noticed a lot of people that had understood in depth the problem they were aspiring to solve, and how they had structured the solution they were proposing into sub-parts each one of which made a step towards the right direction. I feel that as a community we have solved the easy end-to-end supervised learning problems that were to be solved and people have started looking into ways on what we can do better. This can be in terms of better embeddings, other learning paradigms, or leveraging additional information that is out there in our data/world and we yet haven't used it properly. 
 </div>
 </div>
 </div>
