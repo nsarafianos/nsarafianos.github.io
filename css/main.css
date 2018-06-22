@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%; font-size:100%;}
 
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -235,7 +235,7 @@ figure {
   width: 170px;
   margin-bottom: 10px;
 }
-
+img { max-width: 100%; }
 /* Post styles */
 /* ----------------------------------------------------------*/
 
