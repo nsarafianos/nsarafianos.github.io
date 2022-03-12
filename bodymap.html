@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BodyMap: Learning Full-Body Dense Correspondence Map">
+  <meta name="keywords" content="Dense Correspondences">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BodyMap: Learning Full-Body Dense Correspondence Map</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+  <a class="navbar-item" href="https://nsarafianos.github.io/">
+      <span class="icon">
+      <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><!-- <i class="fas fa-home"></i> Font Awesome fontawesome.com -->
+</span>
+  </a>
+
+  <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">
+      More Research
+  </a>
+      <div class="navbar-dropdown">
+          <a class="navbar-item" href="">
+              BodyMap
+          </a>
+          <a class="navbar-item" href="https://pablopalafox.github.io/spams/">
+              SPAMs
+          </a>
+          <a class="navbar-item" href="https://virtualhumans.mpi-inf.mpg.de/neuralgif/">
+              Neural-GIF
+          </a>
+          <a class="navbar-item" href="https://www.phongnhhn.info/HVS_Net/index.html">
+              HVS_Net
+          </a>
+      </div>
+  </div>
+</div>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">BodyMap: Learning Full-Body Dense Correspondence Map</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.researchgate.net/profile/Anastasia-Ianina-2">Anastasia Ianina</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://nsarafianos.github.io/">Nikolaos Sarafianos</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://web.cs.ucla.edu/~yuanluxu/">Yuanlu Xu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.irocco.info/">Ignacio Rocco</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/tony2ng/home">Tony Tung</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> Moscow Institute of Physics and Technology,</span>
+            <span class="author-block"><sup>2</sup> FAIR,</span>
+            <span class="author-block"><sup>3</sup> Meta Reality Labs Research, Sausalito</span>
+          </div>
+          *This work was conducted during an internship at Meta Reality Labs Research
+          <br/>
+          <font size="+2"><b>CVPR 2022</b></font>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="assets/bodymap/bodymap.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="assets/bodymap/bodymap_suppl.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Suppl</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="assets/bodymap/bodymap_suppl_video.mp4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%">
+        <source src="assets/bodymap/bodymap_tony.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">BodyMap</span> establishes dense surface correspondences for the <strong>clothed</strong> human body.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Dense correspondence between humans carries powerful
+            semantic information that can be utilized to solve fundamental
+            problems for full-body understanding such as in-the wild
+            surface matching, tracking and reconstruction.
+          </p>
+          <p>
+            In this paper we present BodyMap, a new framework for obtaining
+            high-definition full-body and continuous dense correspondence
+            between in-the-wild images of clothed humans and
+            the surface of a 3D template model. The correspondences
+            cover fine details such as hands and hair, while capturing
+            regions far from the body surface, such as loose clothing.
+            Prior methods for estimating such dense surface correspondence
+            have i) cut a 3D body into parts which are unwrapped
+            to a 2D UV space, producing discontinuities along
+            part seams, or ii) use a single surface for representing the
+            whole body, but none handled body details.
+          </p>
+          <p>
+            Here, we introduce
+            a novel network architecture with Vision Transformers
+            that learn fine-level features on a continuous body surface.
+            BodyMap outperforms prior work on various metrics and
+            datasets, including DensePose-COCO by a large margin.
+            Furthermore, we show various applications ranging from
+            multi-layer dense cloth correspondence, neural rendering
+            with novel-view synthesis and appearance swapping.
+          </p>
+        </div>
+      </div>
+    </div>
+<!--    &lt;!&ndash;/ Abstract. &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Video</h2>-->
+<!--        <div class="publication-video">-->
+<!--          <iframe src=""-->
+<!--                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Paper video. https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0 &ndash;&gt; -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">BodyMap: Architecture</h2>
+        <div class="publication-image">
+          <img src="assets/bodymap/arch.png" class="publogo" align="center">
+        </div>
+        <h2 class="subtitle has-text-left">
+          Given an RGB image as an input we first extract continuous surface embeddings [1] which are then fed to a
+          vision transformer. We combine these features with the features extracted from the respective apperance
+          encoder and feed them to a decoder which establishes dense surface correspondences for each pixel of the
+          clothed human body with high accuracy.
+      </h2>
+      </div>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Qualitative Results: Fashion Images</h2>
+        <div class="publication-image">
+          <img src="assets/bodymap/qual1.png" class="publogo" align="center">
+        </div>
+      </br>
+      </br>
+      </br>
+      </br>
+      <h2 class="title is-3">Qualitative Results: Mobile Images</h2>
+      <div class="publication-image">
+        <img src="assets/bodymap/qual2.png" class="publogo" align="center">
+      </div>
+      </div>
+      </div>
+    </div>
+</section>
+</br>
+</br>
+
+<!--<section class="hero teaser">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    <div class="hero-body">-->
+<!--      <video id="teaser" autoplay muted loop height="100%">-->
+<!--        <source src="assets/bodymap/bodymap_tony.mp4"-->
+<!--                type="video/mp4">-->
+<!--      </video>-->
+<!--      <h2 class="subtitle has-text-centered">-->
+<!--        <span class="dnerf">BodyMap</span> establishes dense surface correspondences for the <strong>clothed</strong> human body.-->
+<!--      </h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Comparisons</h2>
+          <div class="hero-body">
+          <video id="dollyzoom" autoplay controls muted loop height="100%">
+            <source src="assets/bodymap/comparisons_new.mp4" type="video/mp4">
+          </video>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Applications: Cloth Swapping</h2>
+        <div class="publication-image">
+          <img src="assets/bodymap/swapping.png" class="publogo" align="center">
+        </div>
+<!--      </br>-->
+<!--      </br>-->
+<!--      <h2 class="title is-3">Applications: Cloth Swapping</h2>-->
+<!--      <div class="publication-image">-->
+<!--        <img src="assets/bodymap/swapping.png" class="publogo" align="center">-->
+<!--      </div>-->
+      </div>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- Paper video. -->
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src=""
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="related">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Related Work</h2>
+    [1] Continuous Surface Embeddings, NeurIPS 2020 </br>
+    [2] HumanGPS: Geodesic PreServing Feature for Dense Human Correspondences, CVPR 2021 </br>
+    [3] Densepose: Dense human pose estimation in the wild, CVPR 2018 </br>
+    [4] SimPose: Effectively Learning DensePose and Surface Normals of People from Simulated Data, ECCV 2020
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{ianina2022bodymap,
+  author    = {Ianina, Anastasia and Sarafianos, Nikolaos and Xu, Yuanlu and Rocco, Ignacio and Tung, Tony},
+  title     = {BodyMap: Learning Full-Body Dense Correspondence Map},
+  booktitle = {CVPR},
+  year      = {2022}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
