@@ -192,7 +192,7 @@
       </br>
       <h2 class="title is-3">Mesh Deformations</h2>
       <div style="display: flex; justify-content: center">
-        <video id="teaser" autoplay muted loop width="100%" height="100%">
+        <video controls id="teaser" autoplay muted loop width="100%" height="100%">
           <source src="assets/garment3dgen/deformations_text.mp4"
                   type="video/mp4">
         </video>
@@ -286,7 +286,7 @@
           <img src="assets/garment3dgen/MethodOverview.png" class="publogo" align="center">
         </div>
         <h2 class="subtitle has-text-left">
-          Given an RGB image that serves as guidance we first perform 3D reconstruction We use this output mesh as 3D pseudo-ground-truth to guide a mesh deformation process to deform an input mesh geometry to match the target. Our output geometries preserve the sturcture and topology of the input geometry (as seen by the UV colors of the input and output geometries), contain holes in the neck/arms/waist areas such that they can be fit to bodies and are of good mesh quality to be physically simulated. Finally we generate high-resolution UV texture maps that are faithful to the input image to obtain the final 3D garment asset. 
+          Given an RGB image we first perform 3D reconstruction using single image to multi-view consistent image generation techniques. We use this output mesh as 3D pseudo-ground-truth to guide a mesh deformation process to deform an input mesh geometry to match the target. Our output geometries preserve the sturcture and topology of the input geometry (as seen by the UV colors of the input and output geometries), contain holes in the neck/arms/waist areas such that they can be fit to bodies and are of good mesh quality to be physically simulated. Finally we generate high-resolution UV texture maps that are faithful to the input image to obtain the final 3D garment asset. 
       </h2>
       </div>
       </div>
