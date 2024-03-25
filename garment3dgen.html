@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Garment3DGen: 3D Garment Stylization and Texture Generation
+">
+  <meta name="keywords" content="Dense Correspondences">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garment3DGen: 3D Garment Stylization and Texture Generation
+</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+  <a class="navbar-item" href="https://nsarafianos.github.io/">
+      <span class="icon">
+      <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><!-- <i class="fas fa-home"></i> Font Awesome fontawesome.com -->
+</span>
+  </a>
+
+  <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">
+      More Research
+  </a>
+      <div class="navbar-dropdown">
+          <a class="navbar-item" href="">
+              Garment3DGen: 3D Garment Stylization and Texture Generation
+          </a>
+          <a class="navbar-item" href="https://people.csail.mit.edu/liyifei/publication/diffavatar/">
+              DiffAvatar
+          </a>
+          <a class="navbar-item" href="https://hyblue.github.io/geo-srf/">
+              Geometry Transfer
+          </a>
+>          <a class="navbar-item" href="https://pablopalafox.github.io/spams/">
+              SPAMs
+          </a>
+          <a class="navbar-item" href="https://virtualhumans.mpi-inf.mpg.de/neuralgif/">
+              Neural-GIF
+          </a>
+          <a class="navbar-item" href="https://www.phongnhhn.info/HVS_Net/index.html">
+              HVS_Net
+          </a>
+      </div>
+  </div>
+</div>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Garment3DGen: 3D Garment Stylization and Texture Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://nsarafianos.github.io/">Nikolaos Sarafianos</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://tuurstuyck.github.io/">Tuur Stuyck</a>,</span>
+            <span class="author-block">
+              <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1">Xiaoyu Xiang</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Yilei Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/jovan-cmu/">Jovan Popovic</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/rakesh-r-3848538/">Rakesh Ranjan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b>Meta Reality Labs</b></span>
+          </div>
+          <br/>
+          <font size="+2"><b>arxiv 2024</b></font>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="assets/garment3dgen/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="assets/garment3dgen/supp.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Suppl</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="assets/garment3dgen/supp_video.mp4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="assets/garment3dgen/poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-code"></i>
+                  </span>
+                  <span>Code (Coming)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="display: flex; justify-content: center">
+      <video id="teaser" autoplay muted loop width="70%" height="100%">
+        <source src="assets/garment3dgen/armorDanceRendered.mp4"
+                type="video/mp4">
+      </video>
+       </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Garment3DGen</span> stylizes the geometry and textures of real and fantastical garments that we can fit on top of parametric bodies and simulate.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">3D Garment Generation and Applications </h2>
+        <div style="display: flex; justify-content: center">
+        <video id="teaser" autoplay muted loop width="90%" height="100%">
+          <source src="assets/garment3dgen/snippet.mp4"
+                  type="video/mp4">
+        </video>
+       </div>
+      </br>
+      </br>
+      </br>
+      </br>
+      <h2 class="title is-3">Mesh Deformations</h2>
+      <div style="display: flex; justify-content: center">
+        <video id="teaser" autoplay muted loop width="100%" height="100%">
+          <source src="assets/garment3dgen/deformations.mp4"
+                  type="video/mp4">
+        </video>
+       </div>
+      </div>
+      </div>
+    </div>
+</section>
+</br>
+</br>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Applications: Hand-Garment interaction in VR</h2>
+      <div style="display: flex; justify-content: center">
+          <video id="teaser" autoplay muted loop width="90%" height="100%">
+            <source src="assets/garment3dgen/snipVR1.mp4"
+                    type="video/mp4">
+          </video>
+         </div>
+         </br>
+         </br>
+         </br>
+         </br>
+         <div style="display: flex; justify-content: center">
+          <video id="teaser" autoplay muted loop width="90%" height="100%">
+            <source src="assets/garment3dgen/snipVR2.mp4"
+                    type="video/mp4">
+          </video>
+         </div>
+      </div>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+          <div class="hero-body">
+          <div style="display: flex; justify-content: center">
+          <video id="teaser" autoplay muted loop width="90%" height="100%">
+            <source src="assets/garment3dgen/skeleton_boot1.mp4"
+                    type="video/mp4">
+          </video>
+         </div>
+         </br>
+         </br>
+         </br>
+         </br>
+         <div style="display: flex; justify-content: center">
+          <video id="teaser" autoplay muted loop width="90%" height="100%">
+            <source src="assets/garment3dgen/flower_hawaii1.mp4"
+                    type="video/mp4">
+          </video>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Garment3DGen: Architecture</h2>
+        <div class="publication-image">
+          <img src="assets/garment3dgen/MethodOverview.png" class="publogo" align="center">
+        </div>
+        <h2 class="subtitle has-text-left">
+          Given an RGB image that serves as guidance we first perform 3D reconstruction We use this output mesh as 3D pseudo-ground-truth to guide a mesh deformation process to deform an input mesh geometry to match the target. Our output geometries preserve the sturcture and topology of the input geometry (as seen by the UV colors of the input and output geometries), contain holes in the neck/arms/waist areas such that they can be fit to bodies and are of good mesh quality to be physically simulated. Finally we generate high-resolution UV texture maps that are faithful to the input image to obtain the final 3D garment asset. 
+      </h2>
+      </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="display: flex; justify-content: center">
+        <video id="teaser" autoplay muted loop width="100%" height="100%">
+          <source src="assets/garment3dgen/complete_video.mp4"
+                  type="video/mp4">
+        </video>
+       </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Garment3DGen</span> video (contains sound)
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{sarafianos2024garment3dgen,
+    title={Garment3DGen: 3D Garment Stylization and Texture Generation},
+    author={Sarafianos, Nikolaos and Stuyck, Tuur and Xiang, Xiaoyu and Li, Yilei and Popovic, Jovan and Ranjan, Rakesh},
+    journal={arXiv preprint arXiv:2403.10357},
+    year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
