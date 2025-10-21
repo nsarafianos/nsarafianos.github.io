@@ -69,35 +69,89 @@
     .links a {
       margin-right: 8px;
     }
+    @media (max-width: 600px) {
+          .list-item {
+            flex-direction: column;
+            align-items: flex-start; /* Align text to the left under the image */
+          }
+          .list-item img {
+            width: 100%;      /* Make image take full width of container */
+            height: auto;     /* Maintain aspect ratio */
+            margin-right: 0;  /* Remove right margin */
+            margin-bottom: 12px; /* Add space below image */
+          }
+          .list-item .item-text {
+            font-size: 1em;   /* Slightly smaller text for mobile */
+          }
+          .header-section .row {
+            flex-direction: column !important; /* Stack columns vertically */
+            align-items: center !important;
+          }
+          .header-section .col-md-8,
+          .header-section .col-md-4 {
+            width: 100% !important;
+            max-width: 100% !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+          }
+          .header-section .profile-photo {
+            width: 120px;
+            height: 120px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+          }
+          .header-section font[size="6px"] {
+            font-size: 2em !important; /* Adjust name size for mobile */
+          }
+          .header-section .icon-bar {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+          }
+          .header-section .icon {
+            width: 28px;
+            height: 28px;
+          }
+          .header-section p {
+            font-size: 1em;
+            line-height: 1.4;
+            text-align: center !important;
+          }
+    }
  </style>
 
   <body style="margin:auto">
 
-  <div class="container header-section">
-  <div class="row align-items-center" style="margin-top: 32px;">
-    <div class="col-md-8 text-center">
-        <p align="center">
-            <font size="6px">Nikolaos Sarafianos</font>
+  <div class="container" style="width: 100%">
+    <div class="row">
+        <div class="col-md-6 col-sm-8 col-md-offset-2">
+            <p align="center">&nbsp;</p>
+            <p align="center">
+                <font size="6px">Nikolaos Sarafianos</font>
+                <br>
+                <a href="mailto:nikos.sarafianos@gmail.com">nikos.sarafianos@gmail.com</a>
+            </p>
+            <p align="left">
+                My friends call me Nikos, and I work as a research scientist at Meta Reality Labs focusing on 3D generative models. In the past I've worked on 3D reconstruction, dense correspondences and neural rendering.
+                I obtained my Ph.D. from the University of Houston where I worked on 3D human pose estimation, visual attributes and text-to-image retrieval.
+                I currently serve as a mentor at <a href="https://deeplearningindaba.com/2023/">Deep Learning Indaba</a>.
+            </p>
             <br>
-            <a href="mailto:nikos.sarafianos@gmail.com">nikos.sarafianos@gmail.com</a>
-        </p>
-      <p align="left">
-        My friends call me Nikos, and I work as a research scientist at Meta Reality Labs focusing on 3D generative models.
-        In the past I've worked on 3D reconstruction, dense correspondences and neural rendering. I obtained my Ph.D. from the University of Houston where I worked on 3D human pose estimation, visual attributes and text-to-image retrieval.
-        I currently serve as a mentor at <a href="https://deeplearningindaba.com/2023/">Deep Learning Indaba</a>.
-      </p><br>
-      <div class="icon-bar">
-        <a href="assets/Nikolaos_Sarafianos_CV.pdf"><img src="assets/resume.png" alt="CV" class="icon"></a>
-        <a href="https://scholar.google.com/citations?user=O_TOBmAAAAAJ&hl=en&oi=ao" target="_blank"><img src="assets/google_scholar.png" alt="Google Scholar" class="icon"></a>
-        <a href="https://www.linkedin.com/in/nsarafianos/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn" class="icon"></a>
-        <a href="https://www.twitter.com/sarafianosn" target="_blank"><img src="assets/twitter.png" alt="Twitter" class="icon"></a>
-      </div>
-    </div>
-    <div class="col-md-4 text-center">
-      <img src="assets/myself.png" alt="Nikolaos Sarafianos" class="profile-photo">
+            <p class="icons">
+                <a href="assets/Nikolaos_Sarafianos_CV.pdf"><img src="assets/resume.png" height="25"></a>
+                <a href="https://scholar.google.com/citations?user=O_TOBmAAAAAJ&hl=en&oi=ao" target="_blank">
+                    <img src="assets/google_scholar.png" height="25">
+                </a>
+                <a href="https://www.linkedin.com/in/nsarafianos/" target="_blank"><img src="assets/linkedin.png" height="25"></a>
+                <a href="https://www.twitter.com/sarafianosn" target="_blank"><img src="assets/twitter.png" height="25"></a>
+            </p>
+        </div>
+        <div class="col-md-3 col-sm-3 photo">
+            <img src="assets/myself.png" id="ns">
+        </div>
     </div>
   </div>
-</div>
 
   <div class="container" style="width: 100%">
     <h2>News</h2>
