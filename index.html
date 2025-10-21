@@ -13,37 +13,91 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
 
+  <style>
+    .list-item {
+        display: flex;
+        align-items: center; /* Vertically center image and text */
+        margin-bottom: 24px;
+    }
+    .list-item img {
+        width: 300px;
+        height: 180px; /* Set a fixed height for all images */
+        object-fit: cover; /* Ensures images fill the box without distortion */
+        margin-right: 32px; /* Space between image and text */
+    }
+    .list-item .item-text {
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+  .icon-bar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .icon {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+    }
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 16px;
+    }
+   .header-section h1 {
+      margin-bottom: 0.1em; /* Reduce space below name */
+    }
+    .header-section .email-link {
+      display: block;
+      margin-bottom: 1.3em; /* Space below email */
+      font-size: 1.1em;
+    }
+    .publication-list .publication {
+      margin-bottom: 32px;
+      align-items: center;
+    }
+    .publogo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: contain;
+    }
+    .links a {
+      margin-right: 8px;
+    }
+ </style>
+
   <body style="margin:auto">
 
-  <div class="container" style="width: 100%">
-    <div class="row">
-        <div class="col-md-6 col-sm-8 col-md-offset-2">
-            <p align="center">&nbsp;</p>
-            <p align="center">
-                <font size="6px">Nikolaos Sarafianos</font>
-                <br>
-                <a href="mailto:nikos.sarafianos@gmail.com">nikos.sarafianos@gmail.com</a>
-            </p>
-            <p align="left">
-                My friends call me Nikos, and I work as a research scientist at Meta Reality Labs focusing on 3D generative models. In the past I've worked on 3D reconstruction, dense correspondences and neural rendering.
-                I obtained my Ph.D. from the University of Houston where I worked on 3D human pose estimation, visual attributes and text-to-image retrieval.
-                I currently serve as a mentor at <a href="https://deeplearningindaba.com/2023/">Deep Learning Indaba</a>.
-            </p>
+  <div class="container header-section">
+  <div class="row align-items-center" style="margin-top: 32px;">
+    <div class="col-md-8 text-center">
+        <p align="center">
+            <font size="6px">Nikolaos Sarafianos</font>
             <br>
-            <p class="icons">
-                <a href="assets/Nikolaos_Sarafianos_CV.pdf"><img src="assets/resume.png" height="25"></a>
-                <a href="https://scholar.google.com/citations?user=O_TOBmAAAAAJ&hl=en&oi=ao" target="_blank">
-                    <img src="assets/google_scholar.png" height="25">
-                </a>
-                <a href="https://www.linkedin.com/in/nsarafianos/" target="_blank"><img src="assets/linkedin.png" height="25"></a>
-                <a href="https://www.twitter.com/sarafianosn" target="_blank"><img src="assets/twitter.png" height="25"></a>
-            </p>
-        </div>
-        <div class="col-md-3 col-sm-3 photo">
-            <img src="assets/myself.png" id="ns">
-        </div>
+            <a href="mailto:nikos.sarafianos@gmail.com">nikos.sarafianos@gmail.com</a>
+        </p>
+      <p align="left">
+        My friends call me Nikos, and I work as a research scientist at Meta Reality Labs focusing on 3D generative models.
+        In the past I've worked on 3D reconstruction, dense correspondences and neural rendering. I obtained my Ph.D. from the University of Houston where I worked on 3D human pose estimation, visual attributes and text-to-image retrieval.
+        I currently serve as a mentor at <a href="https://deeplearningindaba.com/2023/">Deep Learning Indaba</a>.
+      </p><br>
+      <div class="icon-bar">
+        <a href="assets/Nikolaos_Sarafianos_CV.pdf"><img src="assets/resume.png" alt="CV" class="icon"></a>
+        <a href="https://scholar.google.com/citations?user=O_TOBmAAAAAJ&hl=en&oi=ao" target="_blank"><img src="assets/google_scholar.png" alt="Google Scholar" class="icon"></a>
+        <a href="https://www.linkedin.com/in/nsarafianos/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn" class="icon"></a>
+        <a href="https://www.twitter.com/sarafianosn" target="_blank"><img src="assets/twitter.png" alt="Twitter" class="icon"></a>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="assets/myself.png" alt="Nikolaos Sarafianos" class="profile-photo">
     </div>
   </div>
+</div>
 
   <div class="container" style="width: 100%">
     <h2>News</h2>
@@ -66,19 +120,53 @@
     </div>
   </div>
 
-
     <div class="container" style="width: 100%">
         <h2>Work Experience</h2>
         <div class="news row">
             <div class="col-md-offset-2 col-sm-offset-2 col-sm-12 col-md-12 col-xs-12">
                 <ul style="padding-left:10px">
-                    <a><img src="assets/frl.png" height="150"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <font size="4.5px">Research Scientist (June 2019 - Present)</font><br><br>
+                    <a><img src="assets/frl.png" height="148"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="4.5px">Research Scientist (June 2019 - Present)</font><br><br>
                     <a><img src="assets/oculus.png" height="70"></a> &nbsp; &nbsp; &nbsp;  &nbsp; <font size="4.5px">Research Scientist Intern (Summer 2018)</font><br>
-                    <a><img src="assets/alexa.png" height="148"></a>   &nbsp;  <font size="4.5px"> Research Scientist Intern (Summer 2017)</font>
+                    <a><img src="assets/alexa.png" height="147"></a>   &nbsp;  <font size="4.5px"> Research Scientist Intern (Summer 2017)</font>
                 </ul>
             </div>
         </div>
     </div>
+
+  <div class="container" style="width: 100%">
+        <h2>Industry Impact</h2>
+        <div class="news row">
+            <div class="col-md-offset-2 col-sm-offset-2 col-sm-12 col-md-12 col-xs-12">
+              <ul style="padding-left:10px">
+                <li class="list-item">
+                    <a><img src="assets/assetgenv2.png" alt="AssetGen2"></a>
+                    <span class="item-text">
+                        <a href="https://developers.meta.com/horizon/blog/worlds/AssetGen2/">3D Asset Generation</a>
+                    </span>
+                </li>
+                <li class="list-item">
+                    <a><img src="assets/texturegen_garments.png" alt="TextureGen Garments"></a>
+                    <span class="item-text">
+                        <a href="https://developers.meta.com/horizon/blog/worlds/new-tools-incentives-creators-mobile-worlds/">Texture Generation for Avatar Clothing</a>
+                    </span>
+                </li>
+                <li class="list-item">
+                    <a><img src="assets/texturegen_objects.png" alt="TextureGen Objects"></a>
+                    <span class="item-text">
+                        <a href="https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/generative-ai-creation-tools/generative-ai-creation-texture-tool">Texture Generation for Objects</a>
+                    </span>
+                </li>
+                <li class="list-item">
+                    <a><img src="assets/avatar.gif" alt="Avatar"></a>
+                    <span class="item-text">
+                        <a href="https://developers.meta.com/horizon/blog/studio/meta-connect-2025-top-four-reasons-to-build-worlds-horizon/">Prompt-to-Animatable-Avatar Generation</a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
 
   <div class="container" style="width: 100%">
     <h2> Publications </h2>
@@ -571,77 +659,11 @@
                 </div>
             </div>
             </br>
-
-<!--            <div class="publication row">-->
-<!--                <div class="col-md-2 col-xs-5 col-sm-3">-->
-<!--                    <img src="assets/PrivInfo.png" class="publogo" align="right">-->
-<!--                </div>-->
-<!--                <div class="col-md-7 col-xs-7 col-sm-9">-->
-<!--                    <p>-->
-<!--                        <strong><a href="">Predicting Privileged Information for Height Estimation</a></strong><br>-->
-<!--                        <b>N. Sarafianos</b>, <a href="https://www.cs.uoi.gr/teams/christophoros-nikou/?lang=en">C. Nikou</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>-->
-<!--                        <em>ICPR 2016</em><br>-->
-<!--                        <span class="links"><a href="assets/ICPR.pdf">Paper</a> &nbsp;-->
-<!--                        <a href="assets/Sarafianos-ICPR2016-poster.pdf">Poster</a>  &nbsp;-->
-<!--                        <a href="http://cbl.uh.edu/repository-code">Code</a>  &nbsp;-->
-<!--                        <a href="bibs/height_icpr16.bib">BibTex</a></span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            </br></br></br>-->
-
-
-<!--            <div class="publication row">-->
-<!--                <div class="col-md-2 col-xs-5 col-sm-3">-->
-<!--                    <img src="assets/bodySkeleton.png" class="publogo" align="right">-->
-<!--                </div>-->
-<!--                <div class="col-md-7 col-xs-7 col-sm-9">-->
-<!--                    <p>-->
-<!--                        <strong><a href="http://ieeexplore.ieee.org/document/7532941/?reload=true">Show me your body:-->
-<!--                        Gender classification from still images</a></strong><br>-->
-<!--                        <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>, <b>N. Sarafianos</b>, <a href="https://www.cs.uoi.gr/teams/christophoros-nikou/?lang=en">C. Nikou</a><br>-->
-<!--                        <em>ICIP 2016</em><br>-->
-<!--                        <span class="links"><a href="assets/showMeYourBody.pdf">Paper</a> &nbsp;-->
-<!--                        <a href="assets/Sarafianos-ICIP2016-poster.pdf">Poster</a> &nbsp;-->
-<!--                        <a href="bibs/gender_icip16.bib">BibTex</a></span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            </br></br>-->
-
-<!--            <div class="publication row">-->
-<!--                <div class="col-md-2 col-xs-5 col-sm-3 nopadding">-->
-<!--                    <img src="assets/LipDetectionProcess.png" class="publogo" align="right">-->
-<!--                </div>-->
-<!--                <div class="col-md-7 col-xs-7 col-sm-9 nopadding">-->
-<!--                    <p>-->
-<!--                        <strong><a href="http://link.springer.com/article/10.1007/s11042-014-2274-x">Audio-visual speaker-->
-<!--                        diarization using Fisher linear semi-discriminant analysis</a></strong><br>-->
-<!--                        <b>N. Sarafianos</b>, <a href="https://tyiannak.github.io/">T. Giannakopoulos</a>, <a href="https://scholar.google.com/citations?user=otwAqFcAAAAJ&hl=en&oi=sra">S. Petridis</a><br>-->
-<!--                        <em>Multimedia Tools and Applications 2014</em><br>-->
-<!--                        <span class="links"><a href="assets/Audio-visual.pdf">Paper</a> &nbsp;-->
-<!--                        <a href="http://www.mathworks.com/matlabcentral/fileexchange/38950-fisher-linear-dicriminant-analysis">Code</a>-->
-<!--                        &nbsp; <a href="https://github.com/tyiannak/pyAudioAnalysis">Audio Library</a> &nbsp;-->
-<!--                        <a href="bibs/diarization_mta16.bib">BibTex</a> </span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </div>
   </div>
   <br>
 
-<!--     <div class="container" style="width: 100%">
-        <h2>Reviewing</h2>
-        <div class="news row">
-            <div class="col-md-offset-2 col-sm-offset-2 col-sm-12 col-md-12 col-xs-12">
-                <ul style="padding-left:10px">
-                    <li>Conferences: CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI, 3DV</li>
-                    <li>Journals: TPAMI, IJCV, CVIU, TIP, TMM, TNNLS, TCSVT</li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
   <br><br><br>
   <script xml:space="preserve" language="JavaScript">
     hideallbibs();
