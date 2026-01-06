@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
     <meta charset="utf-8">
-    <meta property="og:image" content="https://nsarafianos.github.io/assets/myself.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Nikolaos Sarafianos - Research Scientist at Meta Reality Labs specializing in 3D generative models, neural rendering, and human pose estimation.">
+    <meta name="author" content="Nikolaos Sarafianos">
+    <meta name="keywords" content="Nikolaos Sarafianos, Nikos Sarafianos, Research Scientist, Meta, Reality Labs, 3D generative models, neural rendering, computer vision, machine learning, deep learning">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nikolaos Sarafianos - Research Scientist at Meta Reality Labs">
+    <meta property="og:description" content="Research Scientist at Meta Reality Labs focusing on 3D generative models, neural rendering, and 3D reconstruction.">
+    <meta property="og:image" content="https://nsarafianos.github.io/assets/myself.png">
+    <meta property="og:url" content="https://nsarafianos.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@sarafianosn">
+    <meta name="twitter:title" content="Nikolaos Sarafianos - Research Scientist at Meta Reality Labs">
+    <meta name="twitter:description" content="Research Scientist at Meta Reality Labs focusing on 3D generative models, neural rendering, and 3D reconstruction.">
+    <meta name="twitter:image" content="https://nsarafianos.github.io/assets/myself.png">
+
     <title>Nikolaos Sarafianos</title>
     <link rel="canonical" href="https://nsarafianos.github.io/">
     <link rel="stylesheet" href="css/main.css">
@@ -14,741 +33,1024 @@
   </head>
 
   <style>
+    /* Base styles */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Link styles */
+    a {
+        color: #0066cc;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    a:hover {
+        color: #004499;
+        text-decoration: underline;
+    }
+
+    /* Main content wrapper for consistent alignment */
+    .content-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    /* Header/Intro section */
+    .intro-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 0;
+    }
+
+    .intro-text {
+        flex: 1;
+        min-width: 300px;
+        max-width: 600px;
+        padding-right: 30px;
+    }
+
+    .intro-text h1 {
+        font-size: 2.5em;
+        margin-bottom: 5px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .intro-text .email {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .intro-text p {
+        font-size: 1em;
+        line-height: 1.6;
+        text-align: left;
+        margin: 0;
+    }
+
+    .intro-photo {
+        flex: 0 0 auto;
+    }
+
+    .intro-photo img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .intro-photo img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon-bar {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 15px;
+    }
+
+    .icon-bar a {
+        display: inline-block;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .icon-bar a:hover {
+        transform: translateY(-2px);
+        opacity: 0.8;
+    }
+
+    .icon-bar a img {
+        height: 25px;
+        width: auto;
+    }
+
+    /* News section */
+    .news-list {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .news-list li {
+        margin-bottom: 4px;
+    }
+
+    /* Work Experience section */
+    .work-experience-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .work-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .work-item img {
+        height: 80px;
+        width: 180px;
+        object-fit: contain;
+        margin-right: 30px;
+        flex-shrink: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .work-item img:hover {
+        opacity: 0.85;
+    }
+
+    .work-item .work-title {
+        font-size: 1.1em;
+    }
+
+    /* Industry Impact section */
+    .impact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
     .list-item {
         display: flex;
-        align-items: center; /* Vertically center image and text */
+        align-items: center;
         margin-bottom: 24px;
     }
+
     .list-item img {
         width: 300px;
-        height: 180px; /* Set a fixed height for all images */
-        object-fit: cover; /* Ensures images fill the box without distortion */
-        margin-right: 32px; /* Space between image and text */
+        height: 180px;
+        object-fit: cover;
+        margin-right: 32px;
+        border-radius: 8px;
+        flex-shrink: 0;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
+    .list-item img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
     .list-item .item-text {
         font-size: 1.2em;
         font-weight: bold;
-        line-height: 1.2;
+        line-height: 1.4;
     }
-  .icon-bar {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 8px;
+
+    /* Publications section */
+    .publication {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 35px;
     }
-    .icon {
-      height: 32px;
-      width: 32px;
-      object-fit: contain;
+
+    .publication .pub-image {
+        flex: 0 0 200px;
+        margin-right: 25px;
     }
-    .profile-photo {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-top: 16px;
+
+    .publication .publogo {
+        width: 200px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 4px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-   .header-section h1 {
-      margin-bottom: 0.1em; /* Reduce space below name */
+
+    .publication .publogo:hover {
+        transform: scale(1.03);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     }
-    .header-section .email-link {
-      display: block;
-      margin-bottom: 1.3em; /* Space below email */
-      font-size: 1.1em;
+
+    .publication .pub-content {
+        flex: 1;
     }
-    .publication-list .publication {
-      margin-bottom: 32px;
-      align-items: center;
+
+    .publication .pub-content p {
+        margin: 0;
     }
-    .publogo {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      object-fit: contain;
+
+    .publication .pub-content strong a {
+        font-size: 1.05em;
     }
+
     .links a {
-      margin-right: 8px;
+        margin-right: 8px;
+        padding: 2px 0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
     }
-    @media (max-width: 600px) {
-          .list-item {
-            flex-direction: column;
-            align-items: flex-start; /* Align text to the left under the image */
-          }
-          .list-item img {
-            width: 100%;      /* Make image take full width of container */
-            height: auto;     /* Maintain aspect ratio */
-            margin-right: 0;  /* Remove right margin */
-            margin-bottom: 12px; /* Add space below image */
-          }
-          .list-item .item-text {
-            font-size: 1em;   /* Slightly smaller text for mobile */
-          }
-          .header-section .row {
-            flex-direction: column !important; /* Stack columns vertically */
-            align-items: center !important;
-          }
-          .header-section .col-md-8,
-          .header-section .col-md-4 {
-            width: 100% !important;
-            max-width: 100% !important;
-            text-align: center !important;
-            margin: 0 auto !important;
-          }
-          .header-section .profile-photo {
-            width: 120px;
-            height: 120px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-          }
-          .header-section font[size="6px"] {
-            font-size: 2em !important; /* Adjust name size for mobile */
-          }
-          .header-section .icon-bar {
+
+    .links a:hover {
+        text-decoration: none;
+        border-bottom-color: #0066cc;
+    }
+
+    /* Footer */
+    .site-footer {
+        background-color: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+        padding: 30px 0;
+        margin-top: 60px;
+    }
+
+    .footer-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 30px;
+        text-align: center;
+        color: #6c757d;
+        font-size: 0.9em;
+    }
+
+    .footer-content p {
+        margin: 5px 0;
+    }
+
+    .footer-content a {
+        color: #6c757d;
+    }
+
+    .footer-content a:hover {
+        color: #495057;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+        body {
+            font-size: 15px;
+        }
+
+        .content-wrapper {
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            text-align: center;
+        }
+
+        /* Header/Intro responsive */
+        .intro-section {
+            flex-direction: column-reverse;
+            text-align: center;
+            align-items: center;
+        }
+
+        .intro-text {
+            text-align: center;
+            padding-right: 0;
+            padding-top: 20px;
+        }
+
+        .intro-text h1 {
+            font-size: 2em;
+        }
+
+        .intro-text p {
+            text-align: center;
+            font-size: 0.95em;
+        }
+
+        .intro-photo img {
+            width: 140px;
+            height: 140px;
+        }
+
+        .icon-bar {
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 12px;
-          }
-          .header-section .icon {
-            width: 28px;
-            height: 28px;
-          }
-          .header-section p {
+        }
+
+        /* News responsive */
+        .news-list li {
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        /* Work Experience responsive */
+        .work-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .work-item img {
+            margin-right: 0;
+            margin-bottom: 10px;
+            width: 160px;
+            height: auto;
+        }
+
+        .work-item .work-title {
+            text-align: center;
+        }
+
+        /* Industry Impact responsive */
+        .list-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .list-item img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            margin-right: 0;
+            margin-bottom: 12px;
+        }
+
+        .list-item .item-text {
             font-size: 1em;
-            line-height: 1.4;
-            text-align: center !important;
-          }
+        }
+
+        /* Publications responsive */
+        .publication {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .publication .pub-image {
+            flex: 0 0 auto;
+            margin-right: 0;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .publication .publogo {
+            max-width: 280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .publication .pub-content {
+            width: 100%;
+        }
+
+        .publication .pub-content p {
+            font-size: 0.95em;
+        }
     }
- </style>
 
-  <body style="margin:auto">
+    @media (max-width: 480px) {
+        .content-wrapper {
+            padding: 0 15px;
+        }
 
-  <div class="container" style="width: 100%">
-    <div class="row">
-        <div class="col-md-6 col-sm-8 col-md-offset-2">
-            <p align="center">&nbsp;</p>
-            <p align="center">
-                <font size="6px">Nikolaos Sarafianos</font>
-                <br>
-                <a href="mailto:nikos.sarafianos@gmail.com">nikos.sarafianos@gmail.com</a>
-            </p>
-            <p align="left">
+        .intro-text h1 {
+            font-size: 1.7em;
+        }
+
+        .intro-photo img {
+            width: 120px;
+            height: 120px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+        }
+
+        .list-item .item-text {
+            font-size: 0.95em;
+        }
+
+        .publication .publogo {
+            max-width: 220px;
+        }
+
+        .work-item img {
+            width: 140px;
+        }
+
+        .work-item .work-title {
+            font-size: 1em;
+        }
+    }
+  </style>
+
+  <body>
+
+  <div class="content-wrapper">
+    <div class="intro-section">
+        <div class="intro-text">
+            <h1>Nikolaos Sarafianos</h1>
+            <a class="email" href="mailto:nikos.sarafianos@gmail.com">nikos.sarafianos@gmail.com</a>
+            <p>
                 My friends call me Nikos, and I work as a research scientist at Meta Reality Labs focusing on 3D generative models. In the past I've worked on 3D reconstruction, dense correspondences and neural rendering.
                 I obtained my Ph.D. from the University of Houston where I worked on 3D human pose estimation, visual attributes and text-to-image retrieval.
                 I currently serve as a mentor at <a href="https://deeplearningindaba.com/2023/">Deep Learning Indaba</a>.
             </p>
-            <br>
-            <p class="icons">
-                <a href="assets/Nikolaos_Sarafianos_CV.pdf"><img src="assets/resume.png" height="25"></a>
+            <div class="icon-bar">
+                <a href="assets/Nikolaos_Sarafianos_CV.pdf"><img src="assets/resume.png" alt="Resume"></a>
                 <a href="https://scholar.google.com/citations?user=O_TOBmAAAAAJ&hl=en&oi=ao" target="_blank">
-                    <img src="assets/google_scholar.png" height="25">
+                    <img src="assets/google_scholar.png" alt="Google Scholar">
                 </a>
-                <a href="https://www.linkedin.com/in/nsarafianos/" target="_blank"><img src="assets/linkedin.png" height="25"></a>
-                <a href="https://www.twitter.com/sarafianosn" target="_blank"><img src="assets/twitter.png" height="25"></a>
+                <a href="https://www.linkedin.com/in/nsarafianos/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.x.com/sarafianosn" target="_blank"><img src="assets/x.png" alt="Twitter"></a>
+            </div>
+        </div>
+        <div class="intro-photo">
+            <img src="assets/myself.png" alt="Nikolaos Sarafianos">
+        </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <h2>News</h2>
+    <ul class="news-list">
+        <li>Jan. 2026: Co-organizing a workshop on 4D world models at CVPR 2026</li>
+        <li>Dec. 2025: WorldGen is released</li>
+        <li>Oct. 2025: Outstanding reviewer for ICCV 2025</li>
+        <li>June 2025: MaskedLRM is accepted to ICCV 2025</li>
+        <li>Mar. 2025: 3 Papers accepted to CVPR 2025 (one highlight)</li>
+        <li>Nov. 2024: Our work on 3D garment stylization has been accepted to 3DV 2025</li>
+        <li>July 2024: Our work on 3D Gaussian scene stylization has been accepted to ECCV 2024</li>
+        <li>Mar. 2024: 3 Papers accepted to CVPR 2024</li>
+        <li>July 2023: Our work on neural surface fields for human modeling has been accepted to ICCV 2023</li>
+        <li>Mar. 2023: Our work on viewpoint-independent video editing with 3D GANs has been accepted to CVPR 2023</li>
+        <li>Oct. 2022: Our work <strong><a href="https://virtualhumans.mpi-inf.mpg.de/posendf/">Pose-NDF</a></strong>, won the best paper honorable mention award at ECCV 2022</li>
+    </ul>
+  </div>
+
+  <div class="content-wrapper">
+    <h2>Work Experience</h2>
+    <ul class="work-experience-list">
+        <li class="work-item">
+            <img src="assets/frl.png" alt="Meta Reality Labs">
+            <span class="work-title">Research Scientist (June 2019 - Present)</span>
+        </li>
+        <li class="work-item">
+            <img src="assets/oculus.png" alt="Oculus">
+            <span class="work-title">Research Scientist Intern (Summer 2018)</span>
+        </li>
+        <li class="work-item">
+            <img src="assets/alexa.png" alt="Amazon Alexa">
+            <span class="work-title">Research Scientist Intern (Summer 2017)</span>
+        </li>
+    </ul>
+  </div>
+
+  <div class="content-wrapper">
+    <h2>Industry Impact</h2>
+    <ul class="impact-list">
+        <li class="list-item">
+            <a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">
+                <img src="assets/worldgen.png" alt="WorldGen">
+            </a>
+            <span class="item-text">
+                <a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">3D World Generation</a>
+            </span>
+        </li>
+        <li class="list-item">
+            <a href="https://developers.meta.com/horizon/blog/worlds/AssetGen2/">
+                <img src="assets/assetgenv2.png" alt="AssetGen2">
+            </a>
+            <span class="item-text">
+                <a href="https://developers.meta.com/horizon/blog/worlds/AssetGen2/">3D Asset Generation</a>
+            </span>
+        </li>
+        <li class="list-item">
+            <a href="https://developers.meta.com/horizon/blog/worlds/new-tools-incentives-creators-mobile-worlds/">
+                <img src="assets/texturegen_garments.png" alt="TextureGen Garments">
+            </a>
+            <span class="item-text">
+                <a href="https://developers.meta.com/horizon/blog/worlds/new-tools-incentives-creators-mobile-worlds/">Texture Generation for Avatar Clothing and Objects</a>
+            </span>
+        </li>
+        <li class="list-item">
+            <a href="https://developers.meta.com/horizon/blog/studio/meta-connect-2025-top-four-reasons-to-build-worlds-horizon/">
+                <img src="assets/avatar.gif" alt="Avatar">
+            </a>
+            <span class="item-text">
+                <a href="https://developers.meta.com/horizon/blog/studio/meta-connect-2025-top-four-reasons-to-build-worlds-horizon/">Prompt-to-Animatable-Avatar Generation</a>
+            </span>
+        </li>
+    </ul>
+  </div>
+
+  <div class="content-wrapper">
+    <h2>Publications</h2>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/worldgen.png" class="publogo" alt="WorldGen">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">WorldGen: From Text to Traversable and Interactive 3D Worlds</a></strong><br>
+                <a href="https://wdilin.github.io/">D. Wang</a>, ..., <b>N. Sarafianos</b>, ..., <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>, <a href="https://www.robots.ox.ac.uk/~vedaldi/">A. Vedaldi</a>
+                <br>
+                <em>arxiv 2025</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/abs/2511.16825">Paper</a> &nbsp;
+                <a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">Meta Blog</a></span>
             </p>
         </div>
-        <div class="col-md-3 col-sm-3 photo">
-            <img src="assets/myself.png" id="ns">
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/panda.png" class="publogo" alt="MaskedLRM">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://chocolatebiscuit.github.io/MaskedLRM/">3D Mesh Editing using Masked LRMs</a></strong><br>
+                <a href="https://www.computerscience.uchicago.edu/people/will-gao/">W. Gao</a>, <a href="https://wdilin.github.io/">D. Wang</a>, <a href="https://ychfan.github.io/">Y. Fan</a>, <a href="https://aljazbozic.github.io/">A. Božič</a>, <a href="https://tuurstuyck.github.io/">T. Stuyck</a>, <a href="https://sites.google.com/view/zhengqinli">Z. Li</a>, <a href="https://www.flycooler.com/">Z. Dong</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>, <b>N. Sarafianos</b>
+                <br>
+                <em>ICCV 2025</em>
+                <br>
+                <span class="links"><a href="https://chocolatebiscuit.github.io/MaskedLRM/static/pdfs/arxiv.pdf">Paper</a> &nbsp;
+                <a href="https://chocolatebiscuit.github.io/MaskedLRM/">Webpage</a></span>
+            </p>
         </div>
     </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/uvgs.png" class="publogo" alt="UVGS">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://aashishrai3799.github.io/uvgs/">UVGS: Reimagining Unstructured 3D Gaussian Splatting using UV Mapping</a></strong><br>
+                <a href="https://aashishrai3799.github.io/">A. Rai</a>, <a href="https://wdilin.github.io/">D. Wang</a>, <a href="https://scholar.google.co.in/citations?hl=en&user=A7MCx_kAAAAJ&view_op=list_works">M. Jain</a>, <b>N. Sarafianos</b>, <a href="https://arthurchen0518.github.io/">A. Chen</a>, <a href="https://cs.brown.edu/people/ssrinath/">S. Sridhar</a>, <a href="https://aayushp.github.io/">A. Prakash</a>
+                <br>
+                <em>CVPR 2025</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/abs/2502.01846">Paper</a> &nbsp;
+                <a href="https://aashishrai3799.github.io/uvgs/">Webpage</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/quaffure.png" class="publogo" alt="Quaffure">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/2412.10061">Quaffure: Real-Time Quasi-Static Neural Hair Simulation</a></strong><br>
+                <a href="https://tuurstuyck.github.io/">T. Stuyck</a>, <a href="https://www.linkedin.com/in/genelin1211/?originalSubdomain=ca">G. Lin</a>, <a href="https://elrnv.com/">E. Larionov</a>, <a href="https://www.linkedin.com/in/hsiaoyu/">H.-y. Chen</a>, <a href="https://aljazbozic.github.io/">A. Božič</a>, <b>N. Sarafianos</b>, <a href="https://www.linkedin.com/in/doug-roble-752a081">D. Roble</a>
+                <br>
+                <em>CVPR 2025</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/abs/2412.10061">Paper</a> &nbsp;
+                <a href="https://tuurstuyck.github.io/quaffure/quaffure.html">Webpage</a> &nbsp;
+                <a href="https://youtu.be/_kaSzSsfJuQ">Video</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/simgarment.png" class="publogo" alt="PGC">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://phys-gaussian-cloth.github.io/">PGC: Physics-Based Gaussian Cloth from a Single Pose</a></strong><br>
+                <a href="https://tml.stanford.edu/people/michelle-guo">M. Guo</a>,
+                <a href="https://mattchiangvfx.com/">M. Chiang</a>,
+                <a href="https://isantesteban.com/">I. Santesteban</a>,
+                <b>N. Sarafianos</b>,
+                <a href="https://oden.utexas.edu/people/directory/Hsiao-yu%20Chen/">H. Chen</a>,
+                O. Halimi,
+                <a href="https://aljazbozic.github.io/">A. Bozic</a>,
+                <a href="https://shunsukesaito.github.io/">S. Saito</a>,
+                <a href="https://jiajunwu.com/">J. Wu</a>,
+                <a href="https://profiles.stanford.edu/c-karen-liu">K. Liu</a>,
+                <a href="https://tuurstuyck.github.io/">T. Stuyck</a>,
+                <a href="https://elrnv.com/">E. Larionov</a>
+                <br>
+                <em>CVPR 2025 (<strong>Highlight</strong>)</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/abs/2503.20779">Paper</a> &nbsp;
+                <a href="https://phys-gaussian-cloth.github.io/">Webpage</a> &nbsp;
+                <a href="https://youtu.be/EbXjdm-l55E">Video</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/Taylor1.png" class="publogo" alt="Garment3DGen">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://nsarafianos.github.io/garment3dgen">Garment3DGen: 3D Garment Stylization and Texture Generation</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://tuurstuyck.github.io/">T. Stuyck</a>, <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1">X. Xiang</a>, Y. Li, <a href="https://www.linkedin.com/in/jovan-cmu/">J. Popovic</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>
+                <br>
+                <em>3DV 2025</em>
+                <br>
+                <span class="links"><a href="https://nsarafianos.github.io/assets/garment3dgen/paper_arxiv.pdf">Paper</a> &nbsp;
+                <a href="https://nsarafianos.github.io/garment3dgen">Webpage</a> &nbsp;
+                <a href="https://nsarafianos.github.io/assets/garment3dgen/video.mp4">Video</a> &nbsp;
+                <a href="https://github.com/nsarafianos/Garment3DGen">Code</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/tomm.png" class="publogo" alt="TOMM">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://dl.acm.org/doi/abs/10.1145/3712011">Generating High-Fidelity Clothed Human Dynamics with Temporal Diffusion</a></strong><br>
+                <a href="https://jimmyzou.github.io/">S. Zou</a>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <b>N. Sarafianos</b>, <a href="https://fbogo.github.io/">F. Bogo</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://scholar.google.com/citations?user=E4efwTgAAAAJ&hl=zh-TW">W. Si</a>, <a href="https://vision-and-learning-lab-ualberta.github.io/author/li-cheng/">L. Cheng</a>
+                <br>
+                <em>TOMM 2025</em>
+                <br>
+                <span class="links"><a href="assets/TOMM.pdf">Paper</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/wast3d.jpg" class="publogo" alt="WaSt-3D">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://compvis.github.io/wast3d/">WaSt-3D: Wasserstein-2 Distance for Scene-to-Scene Stylization on 3D Gaussians</a></strong><br>
+                <a href="https://scholar.google.com/citations?user=T_U8yxwAAAAJ&hl=id">D. Kotovenko</a>, <a href="https://scholar.google.com/citations?user=OBeGHt4AAAAJ&hl=ru">O. Grebenkova</a>, <b>N. Sarafianos</b>, <a href="https://people.tamu.edu/~avinashpaliwal/">A. Paliwal</a>, <a href="https://scholar.google.de/citations?user=a5JMcsgAAAAJ&hl=en">P. Ma</a>, <a href="https://omidpoursaeed.github.io/">O. Poursaeed</a>, <a href="https://scholar.google.com/citations?user=jaobZDsAAAAJ&hl=en">S. Mohan</a>, <a href="https://scholar.google.com.hk/citations?user=BlfdYL0AAAAJ&hl=en">Y. Fan</a>, Y. Li, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>, <a href="https://ommer-lab.com/people/ommer/">B. Ommer</a>
+                <br>
+                <em>ECCV 2024</em>
+                <br>
+                <span class="links"><a href="https://compvis.github.io/wast3d/">Paper</a> &nbsp;
+                <a href="https://compvis.github.io/wast3d/">Webpage</a> &nbsp;
+                <a href="https://compvis.github.io/wast3d/">Video</a> &nbsp;
+                <a href="https://compvis.github.io/wast3d/">Code</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/Fern_image.png" class="publogo" alt="Geo-SRF">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://hyblue.github.io/geo-srf/">Geometry Transfer for Stylizing Radiance Fields</a></strong><br>
+                <a href="https://hyblue.github.io/">H. Jung</a>, <a href="https://shnnam.github.io/">S. Nam</a>, <b>N. Sarafianos</b>, <a href="http://cmalab.snu.ac.kr/">S. Yoo</a>, <a href="https://www.sornlex.com/">A. Sorkine-Hornung</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>
+                <br>
+                <em>CVPR 2024</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/abs/2402.00863">Paper</a> &nbsp;
+                <a href="https://hyblue.github.io/geo-srf/">Webpage</a> &nbsp;
+                <a href="https://youtu.be/QpFQjE9sDg8">Video</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/diffavatar.png" class="publogo" alt="DiffAvatar">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://people.csail.mit.edu/liyifei/publication/diffavatar/">DiffAvatar: Simulation-Ready Garment Optimization with Differentiable Simulation</a></strong><br>
+                <a href="https://people.csail.mit.edu/liyifei/">Y. Li</a>, <a href="https://www.linkedin.com/in/hsiaoyu/">H.-y. Chen</a>, <a href="https://elrnv.com/">E. Larionov</a>, <b>N. Sarafianos</b>, <a href="https://cdfg.mit.edu/wojciech">W. Matusik</a>, <a href="https://tuurstuyck.github.io/">T. Stuyck</a>
+                <br>
+                <em>CVPR 2024</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/pdf/2311.12194.pdf">Paper</a> &nbsp;
+                <a href="https://people.csail.mit.edu/liyifei/publication/diffavatar/">Webpage</a> &nbsp;
+                <a href="https://youtu.be/vH2MCXneAUE?si=QLY4DlcNsHxREASd">Video</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/anim.png" class="publogo" alt="ANIM">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://marcopesavento.github.io/ANIM/">ANIM: Accurate Neural Implicit Model for Human Reconstruction from a single RGB-D image</a></strong><br>
+                <a href="https://marcopesavento.github.io/">M. Pesavento</a>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <b>N. Sarafianos</b>, <a href="https://www.rmaier.net/">R. Maier</a>, <a href="https://ziyanw1.github.io/">Z. Wang</a>, <a href="https://chhankyao.github.io/">C.H. Yao</a>, <a href="https://marcovolino.github.io/">M. Volino</a>, <a href="https://morpheo.inrialpes.fr/people/Boyer/">E. Boyer</a>, <a href="https://www.surrey.ac.uk/people/adrian-hilton">A. Hilton</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>CVPR 2024</em>
+                <br>
+                <span class="links"><a href="https://marcopesavento.github.io/ANIM/ANIM_camera_ready.pdf">Paper</a> &nbsp;
+                <a href="https://marcopesavento.github.io/ANIM/">Webpage</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/RaySamples.jpg" class="publogo" alt="HISR">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/2312.17192">HISR: Hybrid Implicit Surface Representation for Photorealistic 3D Human Reconstruction</a></strong><br>
+                <a href="https://github.com/Angtian">A. Wang</a>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <b>N. Sarafianos</b>, <a href="https://www.rmaier.net/">R. Maier</a>, <a href="https://morpheo.inrialpes.fr/people/Boyer/">E. Boyer</a>, <a href="https://www.cs.jhu.edu/~ayuille/">A. Yuille</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>AAAI 2024</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/pdf/2312.17192.pdf">Paper</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/nsf.png" class="publogo" alt="NSF">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://yuxuan-xue.com/nsf/">NSF: Neural Surface Fields for Human Modeling from Monocular Depth</a></strong><br>
+                <a href="http://yuxuan-xue.com/">Y. Xue</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/Bhatnagar.html">B. Bhatnagar</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/Marin.html">R. Marin</a>, <b>N. Sarafianos</b>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">G. Pons-Moll</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>ICCV 2023</em>
+                <br>
+                <span class="links"><a href="https://yuxuan-xue.com/nsf/paper/ICCV2023_Yuxuan_NSF.pdf">Paper</a> &nbsp;
+                <a href="https://yuxuan-xue.com/nsf/">Webpage</a> &nbsp;
+                <a href="https://github.com/YuxuanSnow/NeuralSurfaceField">Code</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/vive3d.jpg" class="publogo" alt="VIVE3D">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://afruehstueck.github.io/vive3D/">VIVE3D: Viewpoint-Independent Video Editing using 3D-Aware GANs</a></strong><br>
+                <a href="https://afruehstueck.github.io/">A. Frühstück</a>, <b>N. Sarafianos</b>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <a href="http://peterwonka.net/">P. Wonka</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>CVPR 2023</em>
+                <br>
+                <span class="links"><a href="https://afruehstueck.github.io/assets/data/VIVE3D_CVPR2023.pdf">Paper</a> &nbsp;
+                <a href="https://afruehstueck.github.io/vive3D/">Webpage</a> &nbsp;
+                <a href="https://github.com/afruehstueck/VIVE3D">Code</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/posendf.png" class="publogo" alt="Pose-NDF">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://virtualhumans.mpi-inf.mpg.de/posendf/">Pose-NDF: Modelling Human Pose Manifolds with Neural Distance Fields</a></strong><br>
+                <a href="https://virtualhumans.mpi-inf.mpg.de/people/Tiwari.html">G. Tiwari</a>, D. Antic, <a href="https://janericlenssen.github.io/">J. Lenssen</a>, <b>N. Sarafianos</b>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">G. Pons-Moll</a>
+                <br>
+                <em>ECCV 2022 (Oral)</em><br>
+                <strong><span style="color:red">Best Paper Honorable Mention<br>[3 awards given out of 6773 submissions]</span></strong>
+                <br>
+                <span class="links"><a href="https://virtualhumans.mpi-inf.mpg.de/posendf/posendf_paper.pdf">Paper</a> &nbsp;
+                <a href="https://virtualhumans.mpi-inf.mpg.de/posendf/">Webpage</a> &nbsp;
+                <a href="https://github.com/garvita-tiwari/PoseNDF">Code</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/static.png" class="publogo" alt="HVS-Net">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/2112.13889">Free-Viewpoint RGB-D Human Performance Capture and Rendering</a></strong><br>
+                <a href="https://www.phongnhhn.info/">P. Nguyen</a>, <b>N. Sarafianos</b>, <a href="https://christophlassner.de/">C. Lassner</a>, <a href="https://www.oulu.fi/university/researcher/janne-heikkila">J. Heikkilä</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>ECCV 2022</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/pdf/2112.13889.pdf">Paper</a> &nbsp;
+                <a href="https://www.phongnhhn.info/HVS_Net/index.html">Webpage</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/bodymap/bodymap.png" class="publogo" alt="BodyMap">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://nsarafianos.github.io/bodymap">BodyMap: Learning Full-Body Dense Correspondence Map</a></strong><br>
+                <a href="https://www.researchgate.net/profile/Anastasia-Ianina-2">A. Ianina</a>, <b>N. Sarafianos</b>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <a href="https://www.irocco.info/">I. Rocco</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>CVPR 2022</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/abs/2205.09111">Paper</a> &nbsp;
+                <a href="https://nsarafianos.github.io/bodymap">Webpage</a> &nbsp;
+                <a href="https://nsarafianos.github.io/assets/bodymap/bodymap_video.mp4">Video</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/spams.png" class="publogo" alt="SPAMs">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/2201.08141">SPAMs: Structured Implicit Parametric Models</a></strong><br>
+                <a href="https://pablopalafox.github.io/">P. Palafox</a>, <b>N. Sarafianos</b>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://www.3dunderstanding.org/team.html">A. Dai</a>
+                <br>
+                <em>CVPR 2022</em>
+                <br>
+                <span class="links"><a href="https://pablopalafox.github.io/spams/palafox2022spams.pdf">Paper</a> &nbsp;
+                <a href="https://pablopalafox.github.io/spams/">Webpage</a> &nbsp;
+                <a href="https://www.youtube.com/watch?v=ChdjHNGgrzI">Video</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/anerf.png" class="publogo" alt="Animatable NeRF">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/2204.01218">Animatable Neural Radiance Fields from Monocular RGB-D</a></strong><br>
+                <a href="https://tiantianwang.github.io/">T. Wang</a>, <b>N. Sarafianos</b>, <a href="https://faculty.ucmerced.edu/mhyang/">M.H. Yang</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>arxiv 2022</em>
+                <br>
+                <span class="links"><a href="https://arxiv.org/pdf/2204.01218.pdf">Paper</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/neural_gif.png" class="publogo" alt="Neural-GIF">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://research.fb.com/publications/neural-gif-neural-generalized-implicit-functions-for-animating-people-in-clothing/">Neural-GIF: Neural Generalized Implicit Functions for Animating People in Clothing</a></strong><br>
+                <a href="https://virtualhumans.mpi-inf.mpg.de/people/Tiwari.html">G. Tiwari</a>, <b>N. Sarafianos</b>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">G. Pons-Moll</a>
+                <br>
+                <em>ICCV 2021</em>
+                <br>
+                <span class="links"><a href="https://virtualhumans.mpi-inf.mpg.de/papers/tiwari21neuralgif/neuralgif.pdf">Paper</a> &nbsp;
+                <a href="https://github.com/garvita-tiwari/neuralgif">Code</a> &nbsp;
+                <a href="https://virtualhumans.mpi-inf.mpg.de/neuralgif/">Webpage</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/cvpr_frontal.png" class="publogo" alt="Texture Synthesis">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://research.fb.com/publications/semi-supervised-synthesis-of-high-resolution-editable-textures-for-3d-humans/">Semi-supervised Synthesis of High-Resolution Editable Textures for 3D Humans</a></strong><br>
+                <a href="https://homes.cs.washington.edu/~bindita/">B. Chaudhuri</a>, <b>N. Sarafianos</b>, <a href="https://homes.cs.washington.edu/~shapiro/">L. Shapiro</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>
+                <br>
+                <em>CVPR 2021</em>
+                <br>
+                <span class="links"><a href="assets/revae_cvpr2021.pdf">Paper</a> &nbsp;
+                <a href="assets/revae_cvpr2021_supp.pdf">Supplementary</a> &nbsp;
+                <a href="https://homes.cs.washington.edu/~bindita/cvpr2021webpage/video.mp4">Video</a> &nbsp;
+                <a href="https://homes.cs.washington.edu/~bindita/cvpr2021webpage/poster.pdf">Poster</a> &nbsp;
+                <a href="https://homes.cs.washington.edu/~bindita/humantexturesynthesis.html">Webpage</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/qual1f.png" class="publogo" alt="Text-to-Image">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/1908.10534">Adversarial Representation Learning for Text-to-Image Matching</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://shownx.github.io/">X. Xu</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>
+                <br>
+                <em>ICCV 2019</em>
+                <br>
+                <span class="links"><a href="assets/text2image_iccv19.pdf">Paper</a> &nbsp;
+                <a href="assets/text2image_iccv19_sup.pdf">Supplementary</a> &nbsp;
+                <a href="assets/iccv_video.mp4">Video</a> &nbsp;
+                <a href="assets/ICCV_poster.pdf">Poster</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/attentions.png" class="publogo" alt="Imbalanced Learning">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/1807.03903">Deep Imbalanced Attribute Classification using Visual Attention Aggregation</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://shownx.github.io/">X. Xu</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>
+                <br>
+                <em>ECCV 2018</em>
+                <br>
+                <span class="links"><a href="assets/Imbalanced_Learning_eccv18.pdf">Paper</a> &nbsp;
+                <a href="assets/Imbalanced_Learning_eccv18_Suppl.pdf">Supplementary</a> &nbsp;
+                <a href="https://github.com/cvcode18/imbalanced_learning">Code [Third Party]</a> &nbsp;
+                <a href="assets/eccv_poster.pdf">Poster</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/netStructure_2.png" class="publogo" alt="Curriculum Learning">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://www.sciencedirect.com/science/article/pii/S0031320318300840">Curriculum Learning of Visual Attribute Clusters for Multi-Task Classification</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://tyiannak.github.io/">T. Giannakopoulos</a>, <a href="https://www.cs.uoi.gr/teams/christophoros-nikou/?lang=en">C. Nikou</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>
+                <br>
+                <em>Pattern Recognition 2018</em>
+                <br>
+                <span class="links"><a href="assets/Curriculum_Learning_Clusters.pdf">Paper</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/CurriculumSchema.png" class="publogo" alt="Curriculum Learning ICCVW">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/1708.08728">Curriculum Learning for Multi-Task Classification of Visual Attributes</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://tyiannak.github.io/">T. Giannakopoulos</a>, <a href="https://www.cs.uoi.gr/teams/christophoros-nikou/?lang=en">C. Nikou</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>
+                <br>
+                <em>ICCV Workshops 2017</em>
+                <br>
+                <span class="links"><a href="assets/curriculum_learning.pdf">Paper</a> &nbsp;
+                <a href="assets/curriculum_learning_poster.pdf">Poster</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/FrameworkFig_.png" class="publogo" alt="Adaptive SVM+">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="https://arxiv.org/abs/1708.09083">Adaptive SVM+: Learning with Privileged Information for Domain Adaptation</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://mvrigkas.github.io/">M. Vrigkas</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>
+                <br>
+                <em>ICCV Workshops 2017</em>
+                <br>
+                <span class="links"><a href="assets/asvmplus.pdf">Paper</a> &nbsp;
+                <a href="assets/asvmplus_supp.pdf">Supplementary</a> &nbsp;
+                <a href="assets/asvmplus_poster.pdf">Poster</a></span>
+            </p>
+        </div>
+    </div>
+
+    <div class="publication">
+        <div class="pub-image">
+            <img src="assets/Taxonomy-1.png" class="publogo" alt="3D Human Pose">
+        </div>
+        <div class="pub-content">
+            <p>
+                <strong><a href="http://www.sciencedirect.com/science/article/pii/S1077314216301369">3D Human Pose Estimation: A Review of the Literature and Analysis of Covariates</a></strong><br>
+                <b>N. Sarafianos</b>, <a href="https://scholar.google.com/citations?user=bMSdU84AAAAJ&hl=en">B. Boteanu</a>, <a href="https://bionescu.aimultimedialab.ro/">B. Ionescu</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a>
+                <br>
+                <em>CVIU 2016</em>
+                <br>
+                <span class="links"><a href="assets/3DHumanPose.pdf">Paper</a> &nbsp;
+                <a href="http://campus.pub.ro/lab7/bionescu/SynPose300.html">Data</a></span>
+            </p>
+        </div>
+    </div>
+
   </div>
 
-  <div class="container" style="width: 100%">
-    <h2>News</h2>
-    <div class="news row">
-        <div class="col-md-offset-2 col-sm-12 col-md-10 col-xs-12">
-            <ul style="padding-left:10px">
-            <li>Jan. 2026: Co-organizing a workshop on 4D world models at CVPR 2026</li> 
-            <li>Dec. 2025: WorldGen is released</li>                
-            <li>Oct. 2025: Outstanding reviewer for ICCV 2025</li>
-            <li>June 2025: MaskedLRM is accepted to ICCV 2025</li>
-            <li>Mar. 2025: 3 Papers accepted to CVPR 2025 (one highlight)</li>
-            <!-- <li>Mar. 2025: 1 Paper accepted to EGSR 2025</li> -->
-            <li>Nov. 2024: Our work on 3D garment stylization has been accepted to 3DV 2025</li>
-            <li>July 2024: Our work on 3D Gaussian scene stylization has been accepted to ECCV 2024</li>
-            <li>Mar. 2024: 3 Papers accepted to CVPR 2024</li>
-            <!-- <li>Dec. 2023: Our work on hybrid implicit surface reconstruction has been accepted to AAAI 2024 </li> -->
-            <li>July 2023: Our work on neural surface fields for human modeling has been accepted to ICCV 2023 </li>
-            <li>Mar. 2023: Our work on viewpoint-independent video editing with 3D GANs has been accepted to CVPR 2023 </li>
-            <li>Oct. 2022: Our work <strong><a href="https://virtualhumans.mpi-inf.mpg.de/posendf/">Pose-NDF</a></strong>, won the best paper honorable mention award at ECCV 2022 </li>
-	        </ul>
-        </div>
+  <footer class="site-footer">
+    <div class="footer-content">
+        <p>Last updated: January 2025</p>
     </div>
-  </div>
+  </footer>
 
-    <div class="container" style="width: 100%">
-        <h2>Work Experience</h2>
-        <div class="news row">
-            <div class="col-md-offset-2 col-sm-offset-2 col-sm-12 col-md-12 col-xs-12">
-                <ul style="padding-left:10px">
-                    <a><img src="assets/frl.png" height="148"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="4.5px">Research Scientist (June 2019 - Present)</font><br><br>
-                    <a><img src="assets/oculus.png" height="70"></a> &nbsp; &nbsp; &nbsp;  &nbsp; <font size="4.5px">Research Scientist Intern (Summer 2018)</font><br>
-                    <a><img src="assets/alexa.png" height="147"></a>   &nbsp;  <font size="4.5px"> Research Scientist Intern (Summer 2017)</font>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-  <div class="container" style="width: 100%">
-        <h2>Industry Impact</h2>
-        <div class="news row">
-            <div class="col-md-offset-2 col-sm-offset-2 col-sm-12 col-md-12 col-xs-12">
-              <ul style="padding-left:10px">
-                <li class="list-item">
-                    <a><img src="assets/worldgen.png" alt="WorldGen"></a>
-                    <span class="item-text">
-                        <a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">3D World Generation</a>
-                    </span>
-                </li>
-                <li class="list-item">
-                    <a><img src="assets/assetgenv2.png" alt="AssetGen2"></a>
-                    <span class="item-text">
-                        <a href="https://developers.meta.com/horizon/blog/worlds/AssetGen2/">3D Asset Generation</a>
-                    </span>
-                </li>
-                <li class="list-item">
-                    <a><img src="assets/texturegen_garments.png" alt="TextureGen Garments"></a>
-                    <span class="item-text">
-                        <a href="https://developers.meta.com/horizon/blog/worlds/new-tools-incentives-creators-mobile-worlds/">Texture Generation for Avatar Clothing and Objects</a>
-                    </span>
-                </li>
-                <!-- <li class="list-item">
-                    <a><img src="assets/texturegen_objects.png" alt="TextureGen Objects"></a>
-                    <span class="item-text">
-                        <a href="https://developers.meta.com/horizon-worlds/learn/documentation/desktop-editor/generative-ai-creation-tools/generative-ai-creation-texture-tool">Texture Generation for Objects</a>
-                    </span>
-                </li> -->
-                <li class="list-item">
-                    <a><img src="assets/avatar.gif" alt="Avatar"></a>
-                    <span class="item-text">
-                        <a href="https://developers.meta.com/horizon/blog/studio/meta-connect-2025-top-four-reasons-to-build-worlds-horizon/">Prompt-to-Animatable-Avatar Generation</a>
-                    </span>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </div>
-
-
-  <div class="container" style="width: 100%">
-    <h2> Publications </h2>
-    <div class="news row">
-        <div class="col-md-offset-2 col-sm-12 col-md-10 col-xs-12">
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/worldgen.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">WorldGen: From Text to Traversable and Interactive 3D Worlds</a></strong><br>
-                        <!-- <b>CoreAI - Gen3D Team</b> -->
-                        <a href="https://wdilin.github.io/">D. Wang</a>, ..., <b>N. Sarafianos</b>, ..., <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>, <a href="https://www.robots.ox.ac.uk/~vedaldi/">A. Vedaldi</a>
-                        <br>
-                        <em>arxiv 2025</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/abs/2511.16825">Paper</a> &nbsp;
-                        <a href="https://www.meta.com/blog/worldgen-3d-world-generation-reality-labs-generative-ai-research/">Meta Blog</a> &nbsp;
-                        </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/panda.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://chocolatebiscuit.github.io/MaskedLRM/">3D Mesh Editing using Masked LRMs</a></strong><br>
-                        <a href="https://www.computerscience.uchicago.edu/people/will-gao/">W. Gao</a>, <a href="https://wdilin.github.io/">D. Wang</a>, <a href="https://ychfan.github.io/">Y. Fan</a>, <a href="https://aljazbozic.github.io/">A. Božič</a>, <a href="https://tuurstuyck.github.io/">T. Stuyck</a>, <a href="https://sites.google.com/view/zhengqinli">Z. Li</a>, <a href="https://www.flycooler.com/">Z. Dong</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>, <b>N. Sarafianos</b>
-                        <br>
-                        <em>ICCV 2025</em>
-                        <br>
-                        <span class="links"><a href="https://chocolatebiscuit.github.io/MaskedLRM/static/pdfs/arxiv.pdf">Paper</a> &nbsp;
-                        <a href="https://chocolatebiscuit.github.io/MaskedLRM/">Webpage</a> &nbsp;
-                        </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/uvgs.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://aashishrai3799.github.io/uvgs/">UVGS: Reimagining Unstructured 3D Gaussian Splatting using UV Mapping</a></strong><br>
-                        <a href="https://aashishrai3799.github.io/">A. Rai</a>, <a href="https://wdilin.github.io/" target="_blank">D. Wang</a>, <a href="https://scholar.google.co.in/citations?hl=en&user=A7MCx_kAAAAJ&view_op=list_works">M. Jain</a>, <b>N. Sarafianos</b>, <a href="https://arthurchen0518.github.io/">A. Chen</a>, <a href="https://cs.brown.edu/people/ssrinath/" target="_blank">S. Sridhar</a>, <a href="https://aayushp.github.io/">A. Prakash</a>
-                        <br>
-                        <em>CVPR 2025</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/abs/2502.01846">Paper</a> &nbsp;
-                        <a href="https://aashishrai3799.github.io/uvgs/">Webpage</a> &nbsp;
-                        </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/quaffure.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/2412.10061">Quaffure: Real-Time Quasi-Static Neural Hair Simulation</a></strong><br>
-                        <a href="https://tuurstuyck.github.io/">T. Stuyck</a>, <a href="https://www.linkedin.com/in/genelin1211/?originalSubdomain=ca">G. Lin</a>, <a href="https://elrnv.com/">E. Larionov</a>, <a href="https://www.linkedin.com/in/hsiaoyu/"> H.-y. Chen</a>, <a href="https://aljazbozic.github.io/">A. Božič</a>, <b>N. Sarafianos</b>, <a href="https://www.linkedin.com/in/doug-roble-752a081"/g>D. Roble</a>
-                        <br>
-                        <em>CVPR 2025</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/abs/2412.10061">Paper</a> &nbsp;
-                        <a href="https://tuurstuyck.github.io/quaffure/quaffure.html">Webpage</a> &nbsp;
-                        <a href="https://youtu.be/_kaSzSsfJuQ">Video</a> &nbsp;
-                    </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/simgarment.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://phys-gaussian-cloth.github.io/">PGC: Physics-Based Gaussian Cloth from a Single Pose</a></strong><br>
-                        <span>
-                              <a href="https://tml.stanford.edu/people/michelle-guo " target="_blank">M. Guo</a>,
-                              <a href="https://mattchiangvfx.com/ " target="_blank">M. Chiang</a>,
-                              <a href="https://isantesteban.com/ " target="_blank">I. Santesteban</a>,
-                              <b>N. Sarafianos</b>,
-                              <a href="https://oden.utexas.edu/people/directory/Hsiao-yu%20Chen/ " target="_blank">H. Chen</a>,
-                              <a href=" " target="_blank">O. Halimi,</a></br>
-                              <a href="https://aljazbozic.github.io/ " target="_blank">A. Bozic</a>,
-                              <a href="https://shunsukesaito.github.io/ " target="_blank">S. Saito</a>,
-                              <a href="https://jiajunwu.com/ " target="_blank">J. Wu</a>,
-                              <a href="https://profiles.stanford.edu/c-karen-liu " target="_blank">K. Liu</a>,
-                              <a href="https://tuurstuyck.github.io/ " target="_blank">T. Stuyck</a>,
-                              <a href="https://elrnv.com/ " target="_blank">E. Larionov</a>
-                        </span>
-                        <br>
-                        <em>CVPR 2025 (<strong>Highlight</strong>)</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/abs/2503.20779">Paper</a> &nbsp;
-                        <a href="https://phys-gaussian-cloth.github.io/">Webpage</a> &nbsp;
-                        <a href="https://youtu.be/EbXjdm-l55E">Video</a> &nbsp;
-                    </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/Taylor1.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://nsarafianos.github.io/garment3dgen">Garment3DGen: 3D Garment Stylization and Texture Generation</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://tuurstuyck.github.io/">T. Stuyck</a>, <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1">X. Xiang</a>, <a href="">Y. Li</a>, <a href="https://www.linkedin.com/in/jovan-cmu/">J. Popovic</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>
-                        <br>
-                        <em>3DV 2025</em>
-                        <br>
-                        <span class="links"><a href="https://nsarafianos.github.io/assets/garment3dgen/paper_arxiv.pdf">Paper</a> &nbsp;
-                        <a href="https://nsarafianos.github.io/garment3dgen">Webpage</a> &nbsp;
-                        <a href="https://nsarafianos.github.io/assets/garment3dgen/video.mp4">Video</a>  &nbsp;
-                        <a href="https://github.com/nsarafianos/Garment3DGen">Code</a>
-                    </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/tomm.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://dl.acm.org/doi/abs/10.1145/3712011">Generating High-Fidelity Clothed Human Dynamics with Temporal Diffusion</a></strong><br>
-                        <a href="https://jimmyzou.github.io/">S. Zou</a>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <b>N. Sarafianos</b>, <a href="https://fbogo.github.io/">F. Bogo</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://scholar.google.com/citations?user=E4efwTgAAAAJ&hl=zh-TW">W. Si</a>, <a href="https://vision-and-learning-lab-ualberta.github.io/author/li-cheng/">L. Cheng</a><br>
-                        <em>TOMM 2025</em>
-                        <br>
-                        <span class="links"><a href="assets/TOMM.pdf">Paper</a> &nbsp;
-                    </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/wast3d.jpg" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://compvis.github.io/wast3d/">WaSt-3D: Wasserstein-2 Distance for Scene-to-Scene Stylization on 3D Gaussians</a></strong><br>
-                        <a href="https://scholar.google.com/citations?user=T_U8yxwAAAAJ&hl=id">D. Kotovenko</a>, <a href="https://scholar.google.com/citations?user=OBeGHt4AAAAJ&hl=ru">O. Grebenkova</a>, <b>N. Sarafianos</b>, <a href="https://people.tamu.edu/~avinashpaliwal/">A. Paliwal</a>, <a href="https://scholar.google.de/citations?user=a5JMcsgAAAAJ&hl=en">P. Ma</a>, <br><a href="https://omidpoursaeed.github.io/">O. Poursaeed</a>, <a href="https://scholar.google.com/citations?user=jaobZDsAAAAJ&hl=en">S. Mohan</a>, <a href="https://scholar.google.com.hk/citations?user=BlfdYL0AAAAJ&hl=en">Y. Fan</a>, <a href="">Y. Li</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a>, <a href="https://ommer-lab.com/people/ommer/">B. Ommer</a>
-                        <br>
-                        <em>ECCV 2024</em>
-                        <br>
-                        <span class="links"><a href="https://compvis.github.io/wast3d/">Paper</a> &nbsp;
-                        <a href="https://compvis.github.io/wast3d/">Webpage</a> &nbsp;
-                        <a href="https://compvis.github.io/wast3d/">Video</a>  &nbsp;
-                        <a href="https://compvis.github.io/wast3d/">Code</a>
-                    </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/Fern_image.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://hyblue.github.io/geo-srf/">Geometry Transfer for Stylizing Radiance Fields</a></strong><br>
-                        <a href="https://hyblue.github.io/">H. Jung</a>,  <a href="https://shnnam.github.io/"> S. Nam</a>, <b>N. Sarafianos</b>, <a href="http://cmalab.snu.ac.kr/">S. Yoo</a>, <a href="https://www.sornlex.com/">A. Sorkine-Hornung</a>, <a href="https://www.linkedin.com/in/rakesh-r-3848538/">R. Ranjan</a><br>
-                        <em>CVPR 2024</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/abs/2402.00863">Paper</a> &nbsp;
-                        <a href="https://hyblue.github.io/geo-srf/">Webpage</a> &nbsp &nbsp;
-                        <a href="https://youtu.be/QpFQjE9sDg8">Video</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/diffavatar.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://people.csail.mit.edu/liyifei/publication/diffavatar/">DiffAvatar: Simulation-Ready Garment Optimization with Differentiable Simulation</a></strong><br>
-                        <a href="https://people.csail.mit.edu/liyifei/">Y. Li</a>,  <a href="https://www.linkedin.com/in/hsiaoyu/"> H.-y. Chen</a>, <a href="https://elrnv.com/">E. Larionov</a>, <b>N. Sarafianos</b>, <a href="https://cdfg.mit.edu/wojciech">W. Matusik</a>, <a href="https://tuurstuyck.github.io/">T. Stuyck</a><br>
-                        <em>CVPR 2024</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/pdf/2311.12194.pdf">Paper</a> &nbsp;
-                        <a href="https://people.csail.mit.edu/liyifei/publication/diffavatar/">Webpage</a> &nbsp;
-                        <a href="https://youtu.be/vH2MCXneAUE?si=QLY4DlcNsHxREASd">Video</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/anim.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://marcopesavento.github.io/ANIM/">ANIM: Accurate Neural Implicit Model for Human Reconstruction from a single RGB-D image</a></strong><br>
-                        <a href="https://marcopesavento.github.io/">M. Pesavento</a>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <b>N. Sarafianos</b>, <a href="https://www.rmaier.net/">R. Maier</a>, <a href="https://ziyanw1.github.io/">Z. Wang</a>, <a href="https://chhankyao.github.io/">C.H. Yao</a>, <a href="https://marcovolino.github.io/">M. Volino</a>, <a href="https://morpheo.inrialpes.fr/people/Boyer/">E. Boyer</a>, <a href="https://www.surrey.ac.uk/people/adrian-hilton">A. Hilton</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a><br>
-                        <em>CVPR 2024</em>
-                        <br>
-                        <span class="links"><a href="https://marcopesavento.github.io/ANIM/ANIM_camera_ready.pdf">Paper</a> &nbsp;
-                        <a href="https://marcopesavento.github.io/ANIM/">Webpage</a> &nbsp;
-                        <a href="">Video</a></span>
-                    </p>
-                </div>
-            </div>
-            </br></br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/RaySamples.jpg" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/2312.17192">HISR: Hybrid Implicit Surface Representation for Photorealistic 3D Human Reconstruction</a></strong><br>
-                        <a href="https://github.com/Angtian">A. Wang</a>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <b>N. Sarafianos</b>, <a href="https://www.rmaier.net/">R. Maier</a>, <a href="https://morpheo.inrialpes.fr/people/Boyer/">E. Boyer</a>, <a href="https://www.cs.jhu.edu/~ayuille/">A. Yuille</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a><br>
-                        <em>AAAI 2024</em>
-                        <br>
-                        <span class="links"><a href="https://arxiv.org/pdf/2312.17192.pdf">Paper</a> </span> &nbsp;
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/nsf.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://yuxuan-xue.com/nsf/">NSF: Neural Surface Fields for Human Modeling from Monocular Depth</a></strong><br>
-                        <a href="http://yuxuan-xue.com/">Y. Xue</a>,  <a href="https://virtualhumans.mpi-inf.mpg.de/people/Bhatnagar.html">B. Bhatnagar</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/Marin.html">R. Marin</a>, <b>N. Sarafianos</b>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">G. Pons-Moll</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a><br>
-                        <em>ICCV 2023</em>
-                        <br>
-                        <span class="links"><a href="https://yuxuan-xue.com/nsf/paper/ICCV2023_Yuxuan_NSF.pdf">Paper</a> &nbsp;
-                        <a href="https://yuxuan-xue.com/nsf/">Webpage</a> &nbsp &nbsp;
-                        <a href="https://github.com/YuxuanSnow/NeuralSurfaceField">Code</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/vive3d.jpg" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://afruehstueck.github.io/vive3D/">VIVE3D: Viewpoint-Independent Video Editing using 3D-Aware GANs</a></strong><br>
-                        <a href="https://afruehstueck.github.io/">A. Frühstück</a>, <b>N. Sarafianos</b>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <a href="http://peterwonka.net/">P. Wonka</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a><br>
-                        <em>CVPR 2023</em><br>
-                        <span class="links"><a href="https://afruehstueck.github.io/assets/data/VIVE3D_CVPR2023.pdf">Paper</a> &nbsp;
-                        <a href="https://afruehstueck.github.io/vive3D/">Webpage</a> &nbsp &nbsp;
-                        <a href="https://github.com/afruehstueck/VIVE3D">Code</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/posendf.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://virtualhumans.mpi-inf.mpg.de/posendf/">Pose-NDF: Modelling Human Pose Manifolds with Neural Distance Fields</a></strong><br>
-                        <a href="https://virtualhumans.mpi-inf.mpg.de/people/Tiwari.html">G. Tiwari</a>, <a href="">D. Antic</a>, <a href="https://janericlenssen.github.io/">J. Lenssen</a>, <b>N. Sarafianos</b>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">G. Pons-Moll</a> <br>
-                        <em>ECCV 2022 (Oral)<br>
-                        <strong><p style="color:red">Best Paper Honorable Mention </br>
-                        [3 awards were given out of 6773 submissions]</p></strong></em>
-                        <span class="links"><a href="https://virtualhumans.mpi-inf.mpg.de/posendf/posendf_paper.pdf">Paper</a> &nbsp;
-                        <a href="https://virtualhumans.mpi-inf.mpg.de/posendf/">Webpage</a> &nbsp &nbsp;
-                        <a href="https://github.com/garvita-tiwari/PoseNDF">Code</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/static.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/2112.13889">Free-Viewpoint RGB-D Human Performance Capture and Rendering</a></strong><br>
-                        <a href="https://www.phongnhhn.info/">P. Nguyen</a>, <b>N. Sarafianos</b>, <a href="https://christophlassner.de/">C. Lassner</a>, <a href="https://www.oulu.fi/university/researcher/janne-heikkila">J. Heikkilä</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a> <br>
-                        <em>ECCV 2022</em><br>
-<!--                        <small>Acceptance rate: 28% out of 5803 papers</small><br>-->
-                        <span class="links"><a href="https://arxiv.org/pdf/2112.13889.pdf">Paper</a> &nbsp;
-                        <a href="https://www.phongnhhn.info/HVS_Net/index.html">Webpage</a> &nbsp</span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br>
-           <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/bodymap/bodymap.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://nsarafianos.github.io/bodymap">BodyMap: Learning Full-Body Dense Correspondence Map</a></strong><br>
-                        <a href="https://www.researchgate.net/profile/Anastasia-Ianina-2">A. Ianina</a>, <b>N. Sarafianos</b>, <a href="https://web.cs.ucla.edu/~yuanluxu/">Y. Xu</a>, <a href="https://www.irocco.info/">I. Rocco</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a><br>
-                        <em>CVPR 2022</em><br>
-<!--                        <small>Acceptance rate: 25% out of 8161 papers</small><br>-->
-                        <span class="links"><a href="https://arxiv.org/abs/2205.09111">Paper</a> &nbsp;
-                        <a href="https://nsarafianos.github.io/bodymap">Webpage</a> &nbsp</span>
-                        <a href="https://nsarafianos.github.io/assets/bodymap/bodymap_video.mp4">Video</a> &nbsp</span>
-                    </p>
-                </div>
-            </div>
-<!--     https://nsarafianos.github.io/bodymap   </div>-->
-        </br>
-        </br>
-<!--		<div class="col-md-offset-2 col-sm-12 col-md-10 col-xs-12">-->
-           <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/spams.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/2201.08141">SPAMs: Structured Implicit Parametric Models</a></strong><br>
-                        <a href="https://pablopalafox.github.io/">P. Palafox</a>, <b>N. Sarafianos</b>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://www.3dunderstanding.org/team.html">A. Dai</a>  <br>
-                        <em>CVPR 2022</em><br>
-<!--                        <small>Acceptance rate: 25% out of 8161 papers</small><br>-->
-                        <span class="links"><a href="https://pablopalafox.github.io/spams/palafox2022spams.pdf">Paper</a> &nbsp;
-                        <a href="https://pablopalafox.github.io/spams/">Webpage</a> &nbsp</span>
-                        <a href="https://www.youtube.com/watch?v=ChdjHNGgrzI">Video</a> &nbsp</span>
-                    </p>
-                </div>
-            </div>
-        </br>
-        </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/anerf.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/2204.01218">Animatable Neural Radiance Fields from Monocular RGB-D</a></strong><br>
-                        <a href="https://tiantianwang.github.io/">T. Wang</a>, <b>N. Sarafianos</b>, <a href="https://faculty.ucmerced.edu/mhyang/">M.H. Yang</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a> <br>
-                        <em>arxiv 2022</em><br>
-                        <span class="links"><a href="https://arxiv.org/pdf/2204.01218.pdf">Paper</a> &nbsp;
-                        <a href="">Webpage</a> &nbsp</span>
-                    </p>
-                </div>
-            </div>
-<!--         </br>
-        </br> -->
-        </br>
-        </br>
-           <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/neural_gif.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://research.fb.com/publications/neural-gif-neural-generalized-implicit-functions-for-animating-people-in-clothing/">Neural-GIF: Neural Generalized Implicit Functions for Animating People in Clothing</a></strong><br>
-                        <a href="https://virtualhumans.mpi-inf.mpg.de/people/Tiwari.html">G. Tiwari</a>, <b>N. Sarafianos</b>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a>, <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html">G. Pons-Moll</a> <br>
-                        <em>ICCV 2021</em><br>
-<!--                        <small>Acceptance rate: 26% out of 6236 papers</small><br>-->
-                        <span class="links"><a href="https://virtualhumans.mpi-inf.mpg.de/papers/tiwari21neuralgif/neuralgif.pdf">Paper</a> &nbsp; <a href="https://github.com/garvita-tiwari/neuralgif">
-                        Code</a> &nbsp; <a href="">Video</a> &nbsp; <a href="">Poster</a> &nbsp;
-                        <a href="" target="_blank">BibTex</a>&nbsp; &nbsp; <a href="https://virtualhumans.mpi-inf.mpg.de/neuralgif/">Webpage</a> &nbsp; <a href=""></span>
-                    </p>
-                </div>
-            </div>
-        </br>
-        </br>
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/cvpr_frontal.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://research.fb.com/publications/semi-supervised-synthesis-of-high-resolution-editable-textures-for-3d-humans/">Semi-supervised Synthesis of High-Resolution Editable Textures for 3D Humans</a></strong><br>
-                        <a href="https://homes.cs.washington.edu/~bindita/">B. Chaudhuri</a>, <b>N. Sarafianos</b>, <a href="https://homes.cs.washington.edu/~shapiro/">L. Shapiro</a>, <a href="https://sites.google.com/site/tony2ng/home">T. Tung</a> <br>
-                        <em>CVPR 2021</em><br>
-<!--                        <small>Acceptance rate: 22% out of 7500 papers</small><br>-->
-                        <span class="links"><a href="assets/revae_cvpr2021.pdf">Paper</a> &nbsp; <a href="assets/revae_cvpr2021_supp.pdf">
-                        Supplementary</a> &nbsp; <a href="https://homes.cs.washington.edu/~bindita/cvpr2021webpage/video.mp4">Video</a> &nbsp; <a href="https://homes.cs.washington.edu/~bindita/cvpr2021webpage/poster.pdf">Poster</a> &nbsp;
-                        <a href="bibs/revae_cvpr21.bib" target="_blank">BibTex</a>&nbsp; &nbsp; <a href="https://homes.cs.washington.edu/~bindita/humantexturesynthesis.html">Webpage</a> &nbsp; <a href=""></span>
-                    </p>
-                </div>
-            </div>
-        </br>
-        </br>
-			<div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-2">
-                    <img src="assets/qual1f.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/1908.10534">Adversarial Representation Learning for Text-to-Image Matching</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://shownx.github.io/">X. Xu</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>
-                        <em>ICCV 2019</em><br>
-<!--						<small>Acceptance rate: 24% out of 4350 papers</small><br>-->
-						<span class="links"><a href="assets/text2image_iccv19.pdf">Paper</a> &nbsp; <a href="assets/text2image_iccv19_sup.pdf">
-                        Supplementary</a> &nbsp; <a href="assets/iccv_video.mp4">Video</a> &nbsp; <a href="assets/ICCV_poster.pdf">Poster</a> &nbsp;
-                        <a href="bibs/crossmodal_iccv19.bib" target="_blank">BibTex</a></span>
-                    </p>
-                </div>
-            </div>
-        </br>
-        </br>
-		<div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-3">
-                    <img src="assets/attentions.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/1807.03903">Deep Imbalanced Attribute Classification using Visual Attention Aggregation</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://shownx.github.io/">X. Xu</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>
-                        <em>ECCV 2018</em><br>
-<!--						<small>Acceptance rate: 31.8% out of 2439 papers</small><br>-->
-						<span class="links"><a href="assets/Imbalanced_Learning_eccv18.pdf">Paper</a> &nbsp; <a href="assets/Imbalanced_Learning_eccv18_Suppl.pdf">
-                        Supplementary</a> &nbsp; <a href="https://github.com/cvcode18/imbalanced_learning">Code [Third Party]</a> &nbsp; <a href="assets/eccv_poster.pdf">Poster</a> &nbsp;
-                        <a href="bibs/imbalanced_eccv18.bib" target="_blank">BibTex</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-            </br></br>
-
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-3">
-                    <img src="assets/netStructure_2.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://www.sciencedirect.com/science/article/pii/S0031320318300840">Curriculum
-                        Learning of Visual Attribute Clusters for Multi-Task Classification</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://tyiannak.github.io/">T. Giannakopoulos</a>, <a href="https://www.cs.uoi.gr/teams/christophoros-nikou/?lang=en">C. Nikou</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>
-                        <em>Pattern Recognition 2018</em><br>
-                        <span class="links"><a href="assets/Curriculum_Learning_Clusters.pdf">Paper</a> &nbsp;
-                        <a href="bibs/curriculum_pr17.bib" target="_blank">BibTex</a></span>
-                    </p>
-                </div>
-            </div>
-            </br></br>
-
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-3">
-                    <img src="assets/CurriculumSchema.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/1708.08728">Curriculum Learning for Multi-Task Classification
-                        of Visual Attributes</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://tyiannak.github.io/">T. Giannakopoulos</a>, <a href="https://www.cs.uoi.gr/teams/christophoros-nikou/?lang=en">C. Nikou</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>
-                        <em>ICCV Workshops 2017</em><br>
-                        <span class="links"><a href="assets/curriculum_learning.pdf">Paper</a> &nbsp;
-                        <a href="assets/curriculum_learning_poster.pdf">Poster</a> &nbsp;
-                        <a href="bibs/curriculum_iccv17.bib">BibTex</a> </span>
-                    </p>
-                </div>
-            </div>
-            </br></br>
-
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-3">
-                    <img src="assets/FrameworkFig_.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="https://arxiv.org/abs/1708.09083">Adaptive SVM+: Learning with Privileged Information
-                        for Domain Adaptation</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://mvrigkas.github.io/">M. Vrigkas</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>
-                        <em>ICCV Workshops 2017</em><br>
-                        <span class="links"><a href="assets/asvmplus.pdf">Paper</a> &nbsp;  <a href="assets/asvmplus_supp.pdf">
-                        Supplementary</a> &nbsp; <a href="assets/asvmplus_poster.pdf">Poster</a>  &nbsp;
-                        <a href="bibs/adaptive_iccv17.bib">BibTex</a> </span>
-                    </p>
-                </div>
-            </div>
-            </br>
-
-            <div class="publication row">
-                <div class="col-md-2 col-xs-5 col-sm-3">
-                    <img src="assets/Taxonomy-1.png" class="publogo" align="right">
-                </div>
-                <div class="col-md-7 col-xs-7 col-sm-9">
-                    <p>
-                        <strong><a href="http://www.sciencedirect.com/science/article/pii/S1077314216301369">3D Human Pose
-                        Estimation: A Review of the Literature and Analysis of Covariates</a></strong><br>
-                        <b>N. Sarafianos</b>, <a href="https://scholar.google.com/citations?user=bMSdU84AAAAJ&hl=en">B. Boteanu</a>, <a href="https://bionescu.aimultimedialab.ro/">B. Ionescu</a>, <a href="https://uh.edu/cbl/people/about-director.php">I.A. Kakadiaris</a><br>
-                        <em>CVIU 2016</em><br>
-                        <span class="links"><a href="assets/3DHumanPose.pdf">Paper</a> &nbsp;
-                        <a href="http://campus.pub.ro/lab7/bionescu/SynPose300.html">Data</a> &nbsp;
-                        <a href="bibs/3dpose_cviu16.bib">BibTex</a></span>
-                    </p>
-                </div>
-            </div>
-            </br>
-        </div>
-    </div>
-  </div>
-  <br>
-
-  <br><br><br>
-  <script xml:space="preserve" language="JavaScript">
-    hideallbibs();
-  </script>
 </body>
 </html>
