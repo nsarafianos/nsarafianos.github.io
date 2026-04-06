@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Garment3DGen: 3D Garment Stylization and Texture Generation
-">
-  <meta name="keywords" content="Garment Stylization">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Garment3DGen: 3D Garment Stylization and Texture Generation
-</title>
-  <meta property="og:image" content="https://nsarafianos.github.io/assets/garment3dgen/teaser.png" />
+  <meta name="description" content="Garment3DGen: 3D Garment Stylization and Texture Generation">
+  <meta name="keywords" content="Garment Stylization, 3D Garments, Texture Generation, Meta Reality Labs">
+  <meta name="author" content="Nikolaos Sarafianos">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <title>Garment3DGen: 3D Garment Stylization and Texture Generation</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Garment3DGen: 3D Garment Stylization and Texture Generation">
+  <meta property="og:description" content="3D garment stylization and texture generation for simulation-ready assets.">
+  <meta property="og:image" content="https://nsarafianos.github.io/assets/garment3dgen/teaser.png">
+  <meta property="og:url" content="https://nsarafianos.github.io/garment3dgen">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,10 +36,10 @@
 </head>
 <body>
 
-<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-  <a class="navbar-item" href="https://nsarafianos.github.io/">
+<nav class="navbar-start" style="flex-grow: 1; justify-content: center;" aria-label="Main navigation">
+  <a class="navbar-item" href="https://nsarafianos.github.io/" aria-label="Home">
       <span class="icon">
-      <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>
+      <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>
 </span>
   </a>
 
@@ -42,10 +48,10 @@
       More Research
       </a>
       <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://people.csail.mit.edu/liyifei/publication/diffavatar/">
+          <a class="navbar-item" href="https://people.csail.mit.edu/liyifei/publication/diffavatar/" target="_blank" rel="noopener noreferrer">
               DiffAvatar
           </a>
-          <a class="navbar-item" href="https://hyblue.github.io/geo-srf/">
+          <a class="navbar-item" href="https://hyblue.github.io/geo-srf/" target="_blank" rel="noopener noreferrer">
               Geometry Transfer
           </a>
           <a class="navbar-item" href="">
@@ -53,7 +59,7 @@
           </a>
       </div>
   </div>
-</div>
+</nav>
 
 
 <section class="hero">
@@ -63,25 +69,22 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Garment3DGen: 3D Garment Stylization and Texture Generation</h1>
           <div class="is-size-5 publication-authors">
-<!--             <span class="author-block">
-              <a>Anonymous Authors</a>
-            </span> -->
             <span class="author-block">
               <a href="https://nsarafianos.github.io/">Nikolaos Sarafianos</a>,
             </span>
             <span class="author-block">
-              <a href="https://tuurstuyck.github.io/">Tuur Stuyck</a>,</span>
+              <a href="https://tuurstuyck.github.io/" target="_blank" rel="noopener noreferrer">Tuur Stuyck</a>,</span>
             <span class="author-block">
-              <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1">Xiaoyu Xiang</a>,
+              <a href="https://engineering.purdue.edu/people/xiaoyu.xiang.1" target="_blank" rel="noopener noreferrer">Xiaoyu Xiang</a>,
             </span>
             <span class="author-block">
-              <a href="">Yilei Li</a>,
+              <a>Yilei Li</a>,
             </span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/jovan-cmu/">Jovan Popovic</a>,
+              <a href="https://www.linkedin.com/in/jovan-cmu/" target="_blank" rel="noopener noreferrer">Jovan Popovic</a>,
             </span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/rakesh-r-3848538/">Rakesh Ranjan</a>
+              <a href="https://www.linkedin.com/in/rakesh-r-3848538/" target="_blank" rel="noopener noreferrer">Rakesh Ranjan</a>
             </span>
           </div>
 
@@ -89,21 +92,19 @@
             <span class="author-block"><b>Meta Reality Labs</b></span>
           </div>
           <br/>
-          <!-- <br/> -->
-          <font size="+2"><b>3DV 2025</b></font>
+          <p class="is-size-4"><b>3DV 2025</b></p>
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- &lt;!&ndash; PDF Link. &ndash;&gt; -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2403.18816"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank" rel="noopener noreferrer">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
               </span>
-               <!-- Video Link.  -->
               <span class="link-block">
                 <a href="assets/garment3dgen/video.mp4"
                    class="external-link button is-normal is-rounded is-dark">
@@ -115,7 +116,8 @@
               </span>
               <span class="link-block">
                 <a href="https://github.com/nsarafianos/Garment3DGen"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank" rel="noopener noreferrer">
                   <span class="icon">
                       <i class="fas fa-code"></i>
                   </span>
@@ -124,7 +126,8 @@
               </span>
               <span class="link-block">
                 <a href="https://github.com/facebookresearch/DiffAvatar"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank" rel="noopener noreferrer">
                   <span class="icon">
                       <i class="fas fa-code"></i>
                   </span>
@@ -144,7 +147,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div style="display: flex; justify-content: center">
-      <video id="teaser" autoplay muted loop playsinline width="65%" height="100%">
+      <video autoplay muted loop playsinline width="65%" height="100%">
         <source src="assets/garment3dgen/armorDanceRendered.mp4"
                 type="video/mp4">
       </video>
@@ -158,27 +161,29 @@
 
 
 
+<main>
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-      <h2 class="title is-3">3D Garment Generation and Applications </h2>
+      <h2 class="title is-3">3D Garment Generation and Applications</h2>
         <div class="publication-image">
-          <img src="assets/garment3dgen/teaser.png" class="publogo" align="center">
+          <img src="assets/garment3dgen/teaser.png" class="publogo" alt="Garment3DGen teaser showing stylized 3D garments" loading="lazy">
         </div>
         <div style="display: flex; justify-content: center">
-        <video controls id="teaser" autoplay muted loop playsinline width="90%" height="100%">
+        <video controls autoplay muted loop playsinline width="90%" height="100%">
           <source src="assets/garment3dgen/snippet.mp4"
                   type="video/mp4">
         </video>
        </div>
-      </br>
-      </br>
-      </br>
-      </br>
+      <br>
+      <br>
+      <br>
+      <br>
       <h2 class="title is-3">Mesh Deformations</h2>
       <div style="display: flex; justify-content: center">
-        <video controls id="teaser" autoplay muted loop playsinline width="100%" height="100%">
+        <video controls autoplay muted loop playsinline width="100%" height="100%">
           <source src="assets/garment3dgen/deformations_text.mp4"
                   type="video/mp4">
         </video>
@@ -187,27 +192,27 @@
       </div>
     </div>
 </section>
-</br>
-</br>
+<br>
+<br>
 
 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-      <h2 class="title is-3">Applications: Hand-Garment interaction in VR</h2>
+      <h2 class="title is-3">Applications: Hand-Garment Interaction in VR</h2>
       <div style="display: flex; justify-content: center">
-          <video id="teaser" autoplay muted loop playsinline width="90%" height="100%">
+          <video autoplay muted loop playsinline width="90%" height="100%">
             <source src="assets/garment3dgen/snipVR1.mp4"
                     type="video/mp4">
           </video>
          </div>
-         </br>
-         </br>
-         </br>
-         </br>
+         <br>
+         <br>
+         <br>
+         <br>
          <div style="display: flex; justify-content: center">
-          <video id="teaser" autoplay muted loop playsinline width="90%" height="100%">
+          <video autoplay muted loop playsinline width="90%" height="100%">
             <source src="assets/garment3dgen/snipVR2.mp4"
                     type="video/mp4">
           </video>
@@ -224,11 +229,11 @@
       <div class="column is-four-fifths">
       <h2 class="title is-3">Applications: Sketch to 3D Garment</h2>
       <div style="display: flex; justify-content: center">
-          <video id="sketches" autoplay muted loop playsinline width="90%" height="100%">
+          <video autoplay muted loop playsinline width="90%" height="100%">
             <source src="assets/garment3dgen/sketches.mp4"
                     type="video/mp4">
           </video>
-       </div> 
+       </div>
       </div>
       </div>
     </div>
@@ -242,17 +247,17 @@
         <h2 class="title is-3">Qualitative Results</h2>
           <div class="hero-body">
           <div style="display: flex; justify-content: center">
-          <video id="teaser" autoplay muted loop playsinline width="90%" height="100%">
+          <video autoplay muted loop playsinline width="90%" height="100%">
             <source src="assets/garment3dgen/skeleton_boot1.mp4"
                     type="video/mp4">
           </video>
          </div>
-         </br>
-         </br>
-         </br>
-         </br>
+         <br>
+         <br>
+         <br>
+         <br>
          <div style="display: flex; justify-content: center">
-          <video id="teaser" autoplay muted loop playsinline width="90%" height="100%">
+          <video autoplay muted loop playsinline width="90%" height="100%">
             <source src="assets/garment3dgen/flower_hawaii1.mp4"
                     type="video/mp4">
           </video>
@@ -269,10 +274,10 @@
       <div class="column is-four-fifths">
       <h2 class="title is-3">Garment3DGen: Architecture</h2>
         <div class="publication-image">
-          <img src="assets/garment3dgen/MethodOverview.png" class="publogo" align="center">
+          <img src="assets/garment3dgen/MethodOverview.png" class="publogo" alt="Garment3DGen architecture overview: RGB input to 3D reconstruction, mesh deformation, and UV texture generation" loading="lazy">
         </div>
         <h2 class="subtitle has-text-left">
-          Given an RGB image we first perform 3D reconstruction using single image to multi-view consistent image generation techniques. We use this output mesh as 3D pseudo-ground-truth to guide a mesh deformation process to deform an input mesh geometry to match the target. Our output geometries preserve the sturcture and topology of the input geometry (as seen by the UV colors of the input and output geometries), contain holes in the neck/arms/waist areas such that they can be fit to bodies and are of good mesh quality to be physically simulated. Finally we generate high-resolution UV texture maps that are faithful to the input image to obtain the final 3D garment asset. 
+          Given an RGB image we first perform 3D reconstruction using single image to multi-view consistent image generation techniques. We use this output mesh as 3D pseudo-ground-truth to guide a mesh deformation process to deform an input mesh geometry to match the target. Our output geometries preserve the structure and topology of the input geometry (as seen by the UV colors of the input and output geometries), contain holes in the neck/arms/waist areas such that they can be fit to bodies and are of good mesh quality to be physically simulated. Finally we generate high-resolution UV texture maps that are faithful to the input image to obtain the final 3D garment asset.
       </h2>
       </div>
       </div>
@@ -284,7 +289,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div style="display: flex; justify-content: center">
-        <video controls id="teaser" muted loop playsinline width="100%" height="100%">
+        <video controls muted loop playsinline width="100%" height="100%">
           <source src="assets/garment3dgen/video.mp4"
                   type="video/mp4">
         </video>
@@ -296,6 +301,7 @@
   </div>
 </section>
 
+</main>
 
 
 <section class="section" id="BibTeX">
@@ -311,13 +317,13 @@
 </section>
 
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+            Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>
           </p>
         </div>
       </div>

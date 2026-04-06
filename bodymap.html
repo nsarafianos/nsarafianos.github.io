@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="BodyMap: Learning Full-Body Dense Correspondence Map">
-  <meta name="keywords" content="Dense Correspondences">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BodyMap: Learning Full-Body Dense Correspondence Map">
+  <meta name="keywords" content="Dense Correspondences, Body Mapping, Human Pose, Meta Reality Labs">
+  <meta name="author" content="Anastasia Ianina, Nikolaos Sarafianos, Yuanlu Xu, Ignacio Rocco, Tony Tung">
+
   <title>BodyMap: Learning Full-Body Dense Correspondence Map</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="BodyMap: Learning Full-Body Dense Correspondence Map">
+  <meta property="og:description" content="High-definition full-body dense correspondence between in-the-wild images of clothed humans and 3D template surfaces.">
+  <meta property="og:image" content="https://nsarafianos.github.io/assets/bodymap/bodymap.png">
+  <meta property="og:url" content="https://nsarafianos.github.io/bodymap">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,33 +36,33 @@
 </head>
 <body>
 
-<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-  <a class="navbar-item" href="https://nsarafianos.github.io/">
+<nav class="navbar-start" style="flex-grow: 1; justify-content: center;" aria-label="Main navigation">
+  <a class="navbar-item" href="https://nsarafianos.github.io/" aria-label="Home">
       <span class="icon">
-      <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><!-- <i class="fas fa-home"></i> Font Awesome fontawesome.com -->
+      <svg class="svg-inline--fa fa-home fa-w-18" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>
 </span>
   </a>
 
   <div class="navbar-item has-dropdown is-hoverable">
       <a class="navbar-link">
       More Research
-  </a>
+      </a>
       <div class="navbar-dropdown">
           <a class="navbar-item" href="">
               BodyMap
           </a>
-          <a class="navbar-item" href="https://pablopalafox.github.io/spams/">
+          <a class="navbar-item" href="https://pablopalafox.github.io/spams/" target="_blank" rel="noopener noreferrer">
               SPAMs
           </a>
-          <a class="navbar-item" href="https://virtualhumans.mpi-inf.mpg.de/neuralgif/">
+          <a class="navbar-item" href="https://virtualhumans.mpi-inf.mpg.de/neuralgif/" target="_blank" rel="noopener noreferrer">
               Neural-GIF
           </a>
-          <a class="navbar-item" href="https://www.phongnhhn.info/HVS_Net/index.html">
+          <a class="navbar-item" href="https://www.phongnhhn.info/HVS_Net/index.html" target="_blank" rel="noopener noreferrer">
               HVS_Net
           </a>
       </div>
   </div>
-</div>
+</nav>
 
 
 <section class="hero">
@@ -64,17 +73,17 @@
           <h1 class="title is-1 publication-title">BodyMap: Learning Full-Body Dense Correspondence Map</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://www.researchgate.net/profile/Anastasia-Ianina-2">Anastasia Ianina</a><sup>1*</sup>,</span>
+              <a href="https://www.researchgate.net/profile/Anastasia-Ianina-2" target="_blank" rel="noopener noreferrer">Anastasia Ianina</a><sup>1*</sup>,</span>
             <span class="author-block">
               <a href="https://nsarafianos.github.io/">Nikolaos Sarafianos</a><sup>3</sup>,</span>
             <span class="author-block">
-              <a href="https://web.cs.ucla.edu/~yuanluxu/">Yuanlu Xu</a><sup>3</sup>,
+              <a href="https://web.cs.ucla.edu/~yuanluxu/" target="_blank" rel="noopener noreferrer">Yuanlu Xu</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.irocco.info/">Ignacio Rocco</a><sup>2</sup>,
+              <a href="https://www.irocco.info/" target="_blank" rel="noopener noreferrer">Ignacio Rocco</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/site/tony2ng/home">Tony Tung</a><sup>3</sup>
+              <a href="https://sites.google.com/site/tony2ng/home" target="_blank" rel="noopener noreferrer">Tony Tung</a><sup>3</sup>
             </span>
           </div>
 
@@ -83,12 +92,11 @@
             <span class="author-block"><sup>2</sup> Meta AI,</span>
             <span class="author-block"><sup>3</sup> Meta Reality Labs Research, Sausalito</span>
           </div>
-          *This work was conducted during an internship at Meta Reality Labs Research
-          <br/>
-          <font size="+2"><b>CVPR 2022</b></font>
+          <p>*This work was conducted during an internship at Meta Reality Labs Research</p>
+          <br>
+          <p class="is-size-4"><b>CVPR 2022</b></p>
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="assets/bodymap/bodymap.pdf"
                    class="external-link button is-normal is-rounded is-dark">
@@ -107,7 +115,6 @@
                   <span>Suppl</span>
                 </a>
               </span>
-              <!-- Video Link. -->
               <span class="link-block">
                 <a href="assets/bodymap/bodymap_video.mp4"
                    class="external-link button is-normal is-rounded is-dark">
@@ -137,7 +144,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop height="100%">
+      <video autoplay muted loop playsinline height="100%">
         <source src="assets/bodymap/bodymap_tony.mp4"
                 type="video/mp4">
       </video>
@@ -149,9 +156,10 @@
 </section>
 
 
+<main>
+
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -188,19 +196,6 @@
         </div>
       </div>
     </div>
-<!--    &lt;!&ndash;/ Abstract. &ndash;&gt;-->
-
-<!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
-<!--    <div class="columns is-centered has-text-centered">-->
-<!--      <div class="column is-four-fifths">-->
-<!--        <h2 class="title is-3">Video</h2>-->
-<!--        <div class="publication-video">-->
-<!--          <iframe src=""-->
-<!--                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;/ Paper video. https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0 &ndash;&gt; -->
   </div>
 </section>
 
@@ -210,11 +205,11 @@
       <div class="column is-four-fifths">
       <h2 class="title is-3">BodyMap: Architecture</h2>
         <div class="publication-image">
-          <img src="assets/bodymap/arch.png" class="publogo" align="center">
+          <img src="assets/bodymap/arch.png" class="publogo" alt="BodyMap architecture: RGB input to continuous surface embeddings, vision transformer, and dense correspondence decoder" loading="lazy">
         </div>
         <h2 class="subtitle has-text-left">
           Given an RGB image as an input we first extract continuous surface embeddings [1] which are then fed to a
-          vision transformer. We combine these features with the features extracted from the respective apperance
+          vision transformer. We combine these features with the features extracted from the respective appearance
           encoder and feed them to a decoder which establishes dense surface correspondences for each pixel of the
           clothed human body with high accuracy.
       </h2>
@@ -229,36 +224,22 @@
       <div class="column is-four-fifths">
       <h2 class="title is-3">Qualitative Results: Fashion Images</h2>
         <div class="publication-image">
-          <img src="assets/bodymap/qual1.png" class="publogo" align="center">
+          <img src="assets/bodymap/qual1.png" class="publogo" alt="BodyMap qualitative results on fashion images showing dense correspondence predictions" loading="lazy">
         </div>
-      </br>
-      </br>
-      </br>
-      </br>
+      <br>
+      <br>
+      <br>
+      <br>
       <h2 class="title is-3">Qualitative Results: Mobile Images</h2>
       <div class="publication-image">
-        <img src="assets/bodymap/qual2.png" class="publogo" align="center">
+        <img src="assets/bodymap/qual2.png" class="publogo" alt="BodyMap qualitative results on mobile phone images showing dense correspondence predictions" loading="lazy">
       </div>
       </div>
       </div>
     </div>
 </section>
-</br>
-</br>
-
-<!--<section class="hero teaser">-->
-<!--  <div class="container is-max-desktop">-->
-<!--    <div class="hero-body">-->
-<!--      <video id="teaser" autoplay muted loop height="100%">-->
-<!--        <source src="assets/bodymap/bodymap_tony.mp4"-->
-<!--                type="video/mp4">-->
-<!--      </video>-->
-<!--      <h2 class="subtitle has-text-centered">-->
-<!--        <span class="dnerf">BodyMap</span> establishes dense surface correspondences for the <strong>clothed</strong> human body.-->
-<!--      </h2>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
+<br>
+<br>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -266,7 +247,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Comparisons</h2>
           <div class="hero-body">
-          <video id="dollyzoom" autoplay controls muted loop height="100%">
+          <video autoplay controls muted loop playsinline height="100%">
             <source src="assets/bodymap/comparisons_new.mp4" type="video/mp4">
           </video>
           </div>
@@ -281,14 +262,8 @@
       <div class="column is-four-fifths">
       <h2 class="title is-3">Applications: Cloth Swapping</h2>
         <div class="publication-image">
-          <img src="assets/bodymap/swapping_vert.png" class="publogo" align="center">
+          <img src="assets/bodymap/swapping_vert.png" class="publogo" alt="BodyMap cloth swapping application showing appearance transfer between subjects" loading="lazy">
         </div>
-<!--      </br>-->
-<!--      </br>-->
-<!--      <h2 class="title is-3">Applications: Cloth Swapping</h2>-->
-<!--      <div class="publication-image">-->
-<!--        <img src="assets/bodymap/swapping.png" class="publogo" align="center">-->
-<!--      </div>-->
       </div>
       </div>
     </div>
@@ -297,7 +272,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop height="100%">
+      <video autoplay muted loop playsinline height="100%">
         <source src="assets/bodymap/bodymap_video.mp4"
                 type="video/mp4">
       </video>
@@ -308,31 +283,18 @@
   </div>
 </section>
 
-<!--<section class="section">-->
-<!--  <div class="container is-max-desktop">-->
-<!--    &lt;!&ndash; Abstract. &ndash;&gt;-->
-<!--    <div class="columns is-centered has-text-centered">-->
-<!--      <div class="column is-four-fifths">-->
-<!--        &lt;!&ndash; Paper video. &ndash;&gt;-->
-<!--        <h2 class="title is-3">Video</h2>-->
-<!--        <div class="publication-video">-->
-<!--          <iframe src="assets/bodymap/bodymap_video.mp4"-->
-<!--                  frameborder="0" allow="autoplay muted; encrypted-media" allowfullscreen></iframe>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-
+</main>
 
 
 <section class="section" id="related">
   <div class="container is-max-desktop content">
     <h2 class="title">Related Work</h2>
-    [1] Continuous Surface Embeddings, NeurIPS 2020 </br>
-    [2] HumanGPS: Geodesic PreServing Feature for Dense Human Correspondences, CVPR 2021 </br>
-    [3] Densepose: Dense human pose estimation in the wild, CVPR 2018 </br>
-    [4] SimPose: Effectively Learning DensePose and Surface Normals of People from Simulated Data, ECCV 2020
+    <ol>
+      <li>Continuous Surface Embeddings, NeurIPS 2020</li>
+      <li>HumanGPS: Geodesic PreServing Feature for Dense Human Correspondences, CVPR 2021</li>
+      <li>Densepose: Dense human pose estimation in the wild, CVPR 2018</li>
+      <li>SimPose: Effectively Learning DensePose and Surface Normals of People from Simulated Data, ECCV 2020</li>
+    </ol>
   </div>
 </section>
 
@@ -349,13 +311,13 @@
 </section>
 
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+            Website borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>
           </p>
         </div>
       </div>
